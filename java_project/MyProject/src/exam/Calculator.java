@@ -1,6 +1,6 @@
 package exam;
 
-class Calculator{
+public class Calculator{
 
 	int a;
 	int b;
@@ -18,5 +18,11 @@ class Calculator{
 		return (double) a / b;
 	}
 
-}
+	public static void main(String[] args) {
+		
+		
+	}
 
+
+
+}
