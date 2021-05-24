@@ -15,7 +15,7 @@ class Calculator{
 		return a*b;
 	}
 	double div (int a , int b) {
-		return (int) a / b;
+		return (double) a / b;
 	}
 
 }
