@@ -26,10 +26,9 @@ public class Calculator{
 		Calculator cal = new Calculator();
 		
 		System.out.println(cal.div(3, 5));
-		
+		System.out.println(cal.add(3, 5));
+		System.out.println(cal.mul(3, 5));
+		System.out.println(cal.sub(5, 3));
 	}
-	
-	
-
 
 }
