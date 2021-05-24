@@ -20,9 +20,16 @@ public class Calculator{
 
 	public static void main(String[] args) {
 		
+		// 인스턴스 생성 -> 클래스의 정의가 필요 ( 필요한 변수 , 필요한 메소드)
+		// 클래스이름 참조변수 = new 클래스이름
+		
+		Calculator cal = new Calculator();
+		
+		System.out.println(cal.div(3, 5));
 		
 	}
-
+	
+	
 
 
 }
