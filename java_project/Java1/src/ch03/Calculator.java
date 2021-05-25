@@ -1,6 +1,6 @@
 package ch03;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Calculator {
 
@@ -8,8 +8,8 @@ public class Calculator {
 	 int sub(int a, int b) { return a-b; }
 	 int mul(int a, int b) { return a*b; }
 	 float div(int a, int b) { return (float)a/b; }
-	 float cif (int r) { return (float)( 2*3.14*r);}
-	 float ext (int r) { return (float)( 3.14*r*r);}
+	 float cif (int r) { return (float)( 2*Math.PI*r);}
+	 float ext (int r) { return (float)( Math.PI*r*r);}
 
 	public static void main(String[] args) {
 		
