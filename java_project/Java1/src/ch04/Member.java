@@ -17,7 +17,7 @@ public class Member {
 	}
 
 	void medicalEx(int birth) {
-		if(age(birth) >= 20 && age(birth)%2 == 1) {
+		if(age(birth) >= 20 && age(birth)%2 == 2021%2) {
 			System.out.println("당신은 올해 건강검진 대상자입니다.");
 			if ( age(birth) >= 40) {
 				System.out.println("당신은 암검사 대상자입니다.");
@@ -26,6 +26,7 @@ public class Member {
 			System.out.println("대상자가아닙니다.");
 		}
 	}	
+	
 	public static void main(String[] args) {
 
 		Member m = new Member();
