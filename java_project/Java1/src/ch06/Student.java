@@ -58,18 +58,22 @@ public class Student {
 
 	public static void main(String[] args) {
 
-		int[] kor = new int[10];
-		int[] eng = new int[10];
-		int[] mat = new int[10];
+//		int[] kor = new int[10];
+//		int[] eng = new int[10];
+//		int[] mat = new int[10];
+		
+		int[] kor = {83,75,95,83,95,78,89,95,98,98};
+		int[] eng = {85,83,82,81,82,83,84,85,86,87};
+		int[] mat = {65,78,98,65,98,63,96,99,97,100};
+		
+//		kor[0] = 85;	kor[1] = 80;	kor[2] = 85;	kor[3] = 85;	kor[4] = 85;	
+//		kor[5] = 85;	kor[6] = 85;	kor[7] = 85;	kor[8] = 85;	kor[9] = 85;	
 
-		kor[0] = 85;	kor[1] = 80;	kor[2] = 85;	kor[3] = 85;	kor[4] = 85;	
-		kor[5] = 85;	kor[6] = 85;	kor[7] = 85;	kor[8] = 85;	kor[9] = 85;	
+//		eng[0] = 85;	eng[1] = 90;	eng[2] = 85;	eng[3] = 75;	eng[4] = 85;	
+//		eng[5] = 85;	eng[6] = 65;	eng[7] = 85;	eng[8] = 85;	eng[9] = 80;	
 
-		eng[0] = 85;	eng[1] = 90;	eng[2] = 85;	eng[3] = 75;	eng[4] = 85;	
-		eng[5] = 85;	eng[6] = 65;	eng[7] = 85;	eng[8] = 85;	eng[9] = 80;	
-
-		mat[0] = 75;	mat[1] = 75;	mat[2] = 55;	mat[3] = 75;	mat[4] = 75;	
-		mat[5] = 75;	mat[6] = 85;	mat[7] = 95;	mat[8] = 75;	mat[9] = 75;	
+//		mat[0] = 75;	mat[1] = 75;	mat[2] = 55;	mat[3] = 75;	mat[4] = 75;	
+//		mat[5] = 75;	mat[6] = 85;	mat[7] = 95;	mat[8] = 75;	mat[9] = 75;	
 
 		for( int i = 0; i < 10; i++ ) {
 			System.out.println("국어 : " + kor[i] + " 영어 : "+ eng[i] +" 수학 : " + mat[i]);
