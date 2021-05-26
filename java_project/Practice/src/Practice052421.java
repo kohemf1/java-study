@@ -30,8 +30,7 @@ public class Practice052421 {
 		System.out.println(b);
 		
 		//3-10 대문자를 소문자로 바꿔라 소문자가 대문자보다 문자코드 32더큼
-		char ch1 = 'A';
-		char lowerCase = ()
+
 		
 	}
 
