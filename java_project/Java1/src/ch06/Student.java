@@ -39,13 +39,19 @@ public class Student {
 		this.matGrade = matGrade;
 		this.name = name;
 	}
-
+	int total() {
+		return korGrade + engGrade + matGrade;
+	}
+	
+	float avg() {
+		return (korGrade + engGrade + matGrade)/3f;
+	}
 	
 	void info() {
 		System.out.println(name + "의성적");
 		System.out.println("국어 :" + korGrade + " 영어 :" + engGrade + " 수학 :" + matGrade);
-		System.out.println("평균 : " + (korGrade + engGrade + matGrade)/3);
-		System.out.println( "총점 : " + (korGrade + engGrade + matGrade));
+		System.out.println("평균 : " + total());
+		System.out.println("총점 : " + avg());
 	}
 
 	public static void main(String[] args) {
@@ -79,7 +85,7 @@ public class Student {
 		for( int z = 0; z < mat.length ; z++ ) {
 			sum3 += mat[z];
 		}
-
+		System.out.println("국어 합계  :" + sum1 + " 영어 합계  :" + sum2 + " 수학 합계  :" + sum3);
 		System.out.println("국어 평균  :" + sum1/10 + " 영어 평균  :" + sum2/10 + " 수학 평균  :" + sum3/10);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -88,9 +94,7 @@ public class Student {
 		s[1] = new Student("상류",90,85,75);
 		s[0].info();
 		s[1].info();
-
-		
-		
+	
 
 	}
 
