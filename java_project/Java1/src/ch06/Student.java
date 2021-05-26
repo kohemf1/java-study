@@ -44,6 +44,7 @@ public class Student {
 	}
 	
 	float avg() {
+//		return (float) Math.ceil((korGrade + engGrade + matGrade)/3);
 		return (korGrade + engGrade + matGrade)/3f;
 	}
 	
@@ -51,6 +52,7 @@ public class Student {
 		System.out.println(name + "의성적");
 		System.out.println("국어 :" + korGrade + " 영어 :" + engGrade + " 수학 :" + matGrade);
 		System.out.println("평균 : " + total());
+//		System.out.println("평균 : " + Math.ceil(total()));
 		System.out.println("총점 : " + avg());
 	}
 
@@ -96,5 +98,4 @@ public class Student {
 		s[1].info();
 	
 	}
-
 }
