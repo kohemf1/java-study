@@ -33,6 +33,5 @@ public class Person {
 		Person per = new Person();
 		per.Person("이재훈" , "010-1234-1234", "123456-1234567");
 	
-	
 	}
 }

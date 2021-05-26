@@ -1,7 +1,10 @@
 package exam;
 
 public class Calculator{
-
+	
+		// 메소드 -> 기능 ( 재료 -> 처리 -> 반환 )
+		// 반환타입 메소드이름(매개변수들){ 처리 구문 }
+	
 	int a;
 	int b;
 
