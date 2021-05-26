@@ -16,7 +16,7 @@ public class PersonManger {
 //		f.hello();
 //		f.studying();
 		
-		Female f = new Female("유리", 0111113111111L, "경영", "검정색");
+		Female f = new Female("유리", 0111114111111L, "경영", "검정색");
 		f.hello();
 		f.studying();
 			

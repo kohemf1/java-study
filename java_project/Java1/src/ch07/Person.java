@@ -7,7 +7,7 @@ public class Person {
 //	String perNum;
 	long perNum;
 //	int age
-
+	
 	
 	public Person(String name, long perNum/*, int age*/ ){
 		this.perNum = perNum;
@@ -17,6 +17,9 @@ public class Person {
 	
 	void hello() {
 		int year = Calendar.getInstance().get(Calendar.YEAR);
+//		if(perNum < 1000000000000L) {
+//			 perNum = long.valueOf(string, 8);
+//		}
 		long a =  (long) (perNum/10000000d);
 		System.out.println(a);
 		long b = (long) perNum - (a*10000000);
@@ -29,6 +32,5 @@ public class Person {
 			 System.out.println("안녕하세요. 저는 " + this.name + "입니다." + age +"살이에요.");
 		 }
 	}
-	
 }
 
