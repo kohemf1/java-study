@@ -6,12 +6,17 @@ public class Male extends Person{
 	String major;
 	
 	
-	public Male(String name, String perNum, int age, String hobby , String major) {
-		super(name, perNum, age);
+//	public Male(String name, String perNum, int age, String hobby , String major) {
+//		super(name, perNum, age);
+//		this.hobby = hobby;
+//		this.major = major;
+//	}
+
+	public Male(String name, long perNum, String hobby , String major) {
+		super(name, perNum);
 		this.hobby = hobby;
 		this.major = major;
 	}
-
 		
 	void hello() {
 //		System.out.println("안녕하세요. 저는 " + name + "입니다." + this.age +  "살이에요.");
