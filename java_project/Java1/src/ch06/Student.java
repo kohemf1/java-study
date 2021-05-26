@@ -95,7 +95,6 @@ public class Student {
 		s[0].info();
 		s[1].info();
 	
-
 	}
 
 }
