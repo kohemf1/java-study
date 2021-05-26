@@ -18,7 +18,9 @@ public class Person {
 	void hello() {
 		int year = Calendar.getInstance().get(Calendar.YEAR);
 		long a =  (long) (perNum/10000000d);
-		long b = (long) perNum - a*10000000;
+		System.out.println(a);
+		long b = (long) perNum - (a*10000000);
+		System.out.println(b);
 		 if(b>=3000000){
 			long age = year - (long)(perNum/100000000000d) - 2000 + 1 ;
 			System.out.println("안녕하세요. 저는 " + this.name + "입니다." + age +"살이에요.");
