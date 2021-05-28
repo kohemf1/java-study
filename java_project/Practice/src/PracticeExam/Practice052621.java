@@ -1,4 +1,4 @@
-
+package PracticeExam;
 public class Practice052621 {
 
 	//4-1 문장들을 조건식으로 바꿔라

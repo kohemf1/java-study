@@ -1,3 +1,5 @@
+package PracticeExam;
+
 
 public class Practice052421 {
 
