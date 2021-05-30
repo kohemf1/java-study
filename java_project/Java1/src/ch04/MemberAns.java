@@ -13,7 +13,9 @@ public class MemberAns {
 //	- 위에서 정의한 조건의 범위가 아닌 나머지의 경우 “무료접종 대상이 아닙니다.”라고 출력하도록 합니다.
 	void vaccinCheck(int birthYear) {
 		
-		int age = 2021 - birthYear - 1; // 나이 연산
+//		int age = 2021 - birthYear - 1; // 나이 연산
+		
+		int age = ageCal(birthYear);
 		
 		boolean check1 = age < 15 && age >= 65;
 		boolean check2 = !(age >= 15 && age <65);
@@ -42,7 +44,8 @@ public class MemberAns {
 //	- 40 이상의 경우는 암 검사도 무료로 검사를 할 수 있습니다.
 	
 	void checkup(int birthYear) {
-		int age = 2021 - birthYear - 1;
+//		int age = 2021 - birthYear - 1;
+		int age = ageCal(birthYear);
 		boolean check1 = birthYear%2 == 2021%2;
 		if(age >= 20 && check1) {
 			System.out.println("검진 대상");
@@ -66,5 +69,6 @@ public class MemberAns {
 		 MemberAns member = new MemberAns();
 		 member.vaccinCheck(birthYear);
 		 member.checkup(birthYear);
+		 
 	}
 }
