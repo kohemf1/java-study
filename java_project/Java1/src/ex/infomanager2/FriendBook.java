@@ -47,9 +47,9 @@ public class FriendBook {
 }
 
 interface Menu{
-	int HIGH_FRI = 1; //public static final 생략
-	int UNIV_FRI = 2;
-	int SHOW_ALL = 3;
-	int SHOW_BASIC = 4;
-	int EXIT = 5;	
+	int HIGH_FRI = 0; //public static final 생략
+	int UNIV_FRI = 1;
+	int SHOW_ALL = 2;
+	int SHOW_BASIC = 3;
+	int EXIT = 4;	
 }
