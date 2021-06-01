@@ -17,6 +17,8 @@ class FootballPlayer implements Comparable<FootballPlayer>  {
 		this.age = age;
 	}
 
+	
+
 	public void showData() {	
 		System.out.println(name + " / " + number + "번 / " + team + " / " + age + "살 / ");
 	}
@@ -50,6 +52,8 @@ class FootballPlayer implements Comparable<FootballPlayer>  {
 				this.team, this.age);
 	}
 	
+	
+
 	@Override
 	public int compareTo(FootballPlayer o) {
 		if(team.hashCode() < o.team.hashCode()) {
