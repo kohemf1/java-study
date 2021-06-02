@@ -26,10 +26,10 @@ public class Quiz3 {
 		
 		System.out.println("******************************");
 
-		for(int i = arr.length -1; i > 0; i--) {
-			int[] ab = arr[i];
+		for(int i = arr.length -1; i > 0; i--) { // arr.length 라서 3부터시작 ㅇㅋ?
+			//int[] ab = arr[i];
 			arr[i] = arr[i-1];
-			arr[i-1] = ab;
+			//arr[i-1] = ab;
 		}
 		for(int i =0; i < arr.length; i++) {
 			for(int j = 0; j < arr[i].length; j++) {
