@@ -12,8 +12,6 @@ public class ThreadEx1 {
 		it.start();
 		ct.start();
 
-		
-		
 
 	}
 
