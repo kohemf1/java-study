@@ -9,7 +9,7 @@ public class ShowThread extends Thread{
 	}
 
 	@Override
-	public void run() {
+	public void run() { // 중요!
 		
 		for(int i=0; i < 100; i++) {
 			System.out.println("안녕하세요 :)" + tName + " 입니다.");
