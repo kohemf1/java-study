@@ -26,6 +26,7 @@ public class ObjectSerializable {
 			list.add(new Circle(9, 12, 13.14));
 			list.add(new Circle(21, 22, 23.24));
 			list.add(new Circle(31, 32, 33.34));
+			
 			out.writeObject(list);
 			
 			out.close();
@@ -79,7 +80,7 @@ class Circle implements Serializable {
 
 	int x;
 	int y;
-	transient double r;
+	double r;
 
 	public Circle(int x, int y, double r) {
 
