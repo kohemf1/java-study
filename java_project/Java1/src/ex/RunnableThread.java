@@ -26,7 +26,6 @@ public class RunnableThread {
 									// 문자열 끼리 덧셈이라서 괄호 해줘야함
 		System.out.println("1 ~ 100 합 : " + (at1.getNum() + at2.getNum()));
 	}
-
 }
 
 class AdderThread extends Sum implements Runnable{
@@ -43,17 +42,10 @@ class AdderThread extends Sum implements Runnable{
 	public void run() { // Runnable이 가지고있는 메소드 오버라이딩.		
 		
 		for(int i = startNum; i <= endNum; i++) {
-			
 			addNum(i);
-			
 		}
-	
 	}
-	
-	
 }
-
-
 
 class Sum {
 	int num;
