@@ -44,5 +44,5 @@ where name like '김%'
 --(7) 성이‘김’씨이고이름이‘아’로끝나는고객의이름과주소
 select name, address
 from customer
-where name like '김%아'
+where name like '김%개아'
 ;
