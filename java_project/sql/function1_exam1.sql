@@ -41,7 +41,7 @@ from emp
 --22. DECODE 함수로 직급에 따라 급여를 인상하도록 하시오. 
 -- 직급이 ‘ANALIST”인 사원은 200, ‘SALESMAN’인 사원은 180,
 -- ‘MANAGER’인 사원은 150, ‘CLERK”인 사원은 100을 인상하시오.
-select ename, decode(job,'ANALYST',SAL+200,
+select ename,sal, decode(job,'ANALYST',SAL+200,
                   'SALESMAN',SAL+180,
                   'MANAGER',SAL+150,
                   'CLERK', SAL+100,
