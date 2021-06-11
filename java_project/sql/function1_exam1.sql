@@ -9,7 +9,8 @@ order by hiredate
 --17. SUBSTR 함수를 사용하여 4월에 입사한 사원을 출력하시오.
 select ename, substr(hiredate,4,2) as "입사 월"
 from emp
-where TO_NUMBER(substr(hiredate,4,2), 99) = 04
+where TO_NUMBER(substr(hiredate,4,2), 99) = 04 -- 자동 형변환이된다. 
+                                            --숫자,문자 연산시 숫자로 자동으로 형변환
 ;
 
 -- 18. MOD 함수를 사용하여 사원번호가 짝수인 사람만 출력하시오.
@@ -41,7 +42,7 @@ from emp
 --22. DECODE 함수로 직급에 따라 급여를 인상하도록 하시오. 
 -- 직급이 ‘ANALIST”인 사원은 200, ‘SALESMAN’인 사원은 180,
 -- ‘MANAGER’인 사원은 150, ‘CLERK”인 사원은 100을 인상하시오.
-select ename,sal, decode(job,'ANALYST',SAL+200,
+select ename,job,sal, decode(job,'ANALYST',SAL+200,
                   'SALESMAN',SAL+180,
                   'MANAGER',SAL+150,
                   'CLERK', SAL+100,
@@ -67,14 +68,19 @@ group by job
 select  count(job)-count(distinct job) as samejob  
 from emp
 ;
+select job,count(*)
+from emp
+group by job
+;
+
 
 SELECT JOB
 FROM EMP;
 --26.관리자 수를 출력하시오. 
-select count(JOB)
+select count(DISTINCT mgr) 
 from emp
-WHERE JOB = 'MANAGER'
 ;
+
 
 -- 27 .급여 최고액, 급여 최저액의 차액을 출력하시오.
 SELECT MAX(SAL),MIN(SAL), MAX(SAL)-MIN(SAL)
@@ -116,6 +122,14 @@ select deptno,decode ( deptno, 10,'ACCOUNTING'
 FROM EMP
 group by deptno
 ;
+
+ -- 조인 이용 시
+ select e.deptno,d.loc, d.dname,round(avg(sal),2), count(*)
+ from emp e, dept d
+ where e.deptno=d.deptno
+ group by e.deptno, d.loc, d.dname
+ order by e.deptno
+ ;
 -- 31. 업무를 표시한 다음 해당 업무에 대해 부서 번호별 1
 -- 급여 및 부서 10, 20, 30의 급여 총액을 각각 출력하시오.
 -- 별칭은 각 job, dno, 부서 10, 부서 20, 부서 30, 총액으로 지정하시오. 
@@ -126,7 +140,7 @@ decode(DEPTNO,20,SUM(SAL)) AS "부서 20",decode(DEPTNO,30,SUM(SAL)) AS "부서 
 sum(sal)as"총액"
 from emp 
 group by job,deptno
-order by deptno
+order by deptno ,job
 ;
 
 
