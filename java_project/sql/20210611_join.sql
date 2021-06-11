@@ -18,3 +18,15 @@ FROM EMP e,DEPT d
 WHERE e.DEPTNO = d.DEPTNO --AND e.ENAME = 'SCOTT'
 ORDER BY d.dname asc, e.ename asc
 ;
+
+-- self join : 자기 자신을 조인 ( 참조 )
+-- emp -> mgr 컬럼이 emp.mepno 참조
+select e.empno, e.ename, e.mgr, m.ename
+from emp e, emp m
+where e.mgr = m.empno(+) -- (+) 아웃터조인  
+order by e.job 
+;
+
+
+
+
