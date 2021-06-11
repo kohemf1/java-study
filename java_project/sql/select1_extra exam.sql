@@ -18,6 +18,32 @@ where price >= 20000
 select *
 from customer;
 
+--(3) 박지성의총구매액(박지성의고객번호는1번으로놓고작성)
+select *
+from orders
+;
+select custid,sum(saleprice)
+from orders
+where custid = 1
+group by custid
+;
+--(4) 박지성이구매한도서의수(박지성의고객번호는1번으로놓고작성)
+select custid,count(saleprice) as "구매한 도서 수"
+from orders
+where custid = 1
+group by custid
+;
+
+
+--(1) 마당서점도서의총개수
+select count(*)
+from book
+;
+--(2) 마당서점에도서를출고하는출판사의총개수
+select count (distinct publisher) as "출판사 수"
+from book
+;
+
 --(3) 모든고객의이름, 주소
 select name, address
 from customer
