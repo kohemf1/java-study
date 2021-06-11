@@ -7,9 +7,9 @@ order by hiredate
 ;
 
 --17. SUBSTR 함수를 사용하여 4월에 입사한 사원을 출력하시오.
-select ename, substr(hiredate,5,1) as "입사 월"
+select ename, substr(hiredate,4,2) as "입사 월"
 from emp
-where TO_NUMBER(substr(hiredate,5,1), 9) = 4
+where TO_NUMBER(substr(hiredate,4,2), 99) = 04
 ;
 
 -- 18. MOD 함수를 사용하여 사원번호가 짝수인 사람만 출력하시오.
