@@ -21,18 +21,32 @@ select e.ename, e.job, e.sal
 from emp e
 where e.sal = (select min(sal) from emp)
 ;
+select ename,job,sal
+from emp
+where sal <= all (select sal from emp)
+;
+
 -- 46. 평균급여가 가장 적은 직급의 직급 이름과 직급의 평균을 구하시오.
 select job, avg(sal)
 from emp 
 group by job
 having avg(sal) = (select min(avg(Sal)) from emp group by job)
 ;
-
+select job, avg(sal)
+from emp 
+group by job
+having avg(sal) <= all (select avg(sal) from emp group by job)
+;
 --47. 각 부서의 최소 급여를 받는 사원의 이름, 급여, 부서번호를 표시하시오.
 select deptno,ename,sal
-from emp
-where sal in (select min(sal) from emp group by deptno)
+from emp e
+where sal in (select min(sal) from emp m
+group by deptno)
 ;
+
+
+
+
 --48. 담당업무가 ANALYST 인 사원보다 급여가 적으면서 업무가 ANALYST가 아닌 
 -- 사원들을 표시(사원번호, 이름, 담당 업무, 급여)하시오.
 select empno, ename, job, sal
@@ -72,12 +86,17 @@ select empno,ename
 from emp
 where deptno IN ( select deptno from emp where ename like '%K%')
 ;
+-- (exists) (self join) 도가능 
+
 --54. 부서위치가 DALLAS인 사원의 이름과 부서번호 및 담당업무를 표시하시오.
 SELECT ename,deptno,job
 from emp
 where deptno = (select deptno from dept where loc = 'DALLAS')
 ;
-
+select E.ename,E.deptno,E.job
+from emp e, dept d
+where e.deptno = d.deptno and d.loc = 'DALLAS'
+;
 --55.KING에게 보고하는 사원의 이름과 급여를 표시하시오.
 SELECT ename , sal
 from emp
@@ -88,7 +107,10 @@ SELECT deptno, ename, job
 from emp
 where deptno in ( select deptno from dept where dname = 'RESEARCH')
 ;
-
+SELECT e.deptno,e.ename,e.job
+from emp e,dept d
+where e.deptno = d.deptno and d.dname = 'RESEARCH'
+;
 --57. 평균 월급보다 많은 급여를 받고 
 --이름에 M이 포함된 사원과 같은 부서에서 근무하는 사원의 
 --사원 번호, 이름, 급여를 표시하시오.
@@ -96,16 +118,17 @@ SELECT empno, ename, sal
 from emp
 where sal > (select avg(sal) from emp) 
         and deptno in( select deptno from emp where ename LIKE '%M%')
-;
+; -- 서브쿼리가 2개이상 나오면 다른방법을 고민을 해보자
 --58. 평균급여가 가장 적은 업무를 찾으시오.
 SELECT job,avg(sal)
 FROM EMP
 group by job
-having avg(sal) = (select min(avg(Sal)) from emp group by job)
+--having avg(sal) = (select min(avg(Sal)) from emp group by job)
+HAVING avg(sal) <= all(select avg(Sal) from emp group by job)
 ;
 
 --59.담당업무가 MANAGER 인 사원이 소속된 부서와 동일한 부서의 사원을 표시하시오.
 select ename
 from emp
-where deptno in (select deptno from emp where job = 'MANAGER')
+where deptno in (select distinct deptno from emp where job = 'MANAGER')
 ;
