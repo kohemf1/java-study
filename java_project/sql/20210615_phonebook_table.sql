@@ -38,7 +38,7 @@ create table phoneinfo_com(
     constraint com_idx_nn not null,
     fr_c_company varchar2(20) default 'n' -- 회사친구의 회사 이름
     constraint com_company_nn not null,
-    fr_ref number(6) constraint com_ref_nn not null -- 회사정보 외래키
+    fr_ref number(6) constraint com_ref_nn not null -- 기본정보 외래키
     constraint com_ref_pk REFERENCES phoneinfo_basic
 ); 
 
