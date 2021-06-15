@@ -18,7 +18,7 @@ desc phoneinfo_basic;
 
 drop table phoneinfo_univ;
 create table phoneInfo_univ(
-    idx number(6)
+    idx number(6) 
     constraint univ_idx_nn not null,
     fr_u_major varchar2(20) -- 대학친구 전공 정보 
     default 'n'
