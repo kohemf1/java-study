@@ -28,7 +28,7 @@ create table phoneInfo_univ(
     constraint univ_year_nn not null 
     constraint univ_year_ck check (0 < fr_u_year and fr_u_year < 5),
     fr_ref number(6) constraint univ_ref_nn not null -- 기본정보 외래키
-    constraint univ_ref_pk REFERENCES phoneinfo_basic
+    constraint univ_ref_pk REFERENCES phoneinfo_basic(idx)
 );
 desc phoneinfo_univ;
 
@@ -39,7 +39,7 @@ create table phoneinfo_com(
     fr_c_company varchar2(20) default 'n' -- 회사친구의 회사 이름
     constraint com_company_nn not null,
     fr_ref number(6) constraint com_ref_nn not null -- 기본정보 외래키
-    constraint com_ref_pk REFERENCES phoneinfo_basic
+    constraint com_ref_pk REFERENCES phoneinfo_basic(idx)
 ); 
 
 desc  phoneinfo_com;
