@@ -37,7 +37,15 @@ where idx = 444444
 delete from phoneinfo_univ 
 where idx = 111111 and fr_u_major = '전기'
 ;
+delete from phoneinfo_univ 
+where idx = 111111 
+;
+delete from phoneinfo_basic
+where idx = 111111;
 
+select * from phoneinfo_basic pb , phoneinfo_univ pu
+where pu.fr_ref = pb.idx
+;
 --3.phoneinfo_com  의 select,update,delete,insert 하는 sql
 select * from phoneinfo_com;
 
@@ -51,4 +59,7 @@ where idx = 333333
 
 delete from phoneinfo_com
 where idx = 333333 and fr_c_company = 'INTEL'
+;
+delete from phoneinfo_basic
+where idx = 333333
 ;
