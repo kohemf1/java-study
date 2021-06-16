@@ -10,7 +10,7 @@ create table phoneInfo_basic(
     constraint basic_phonenumber_nn not null,
     fr_email varchar2(20), -- 친구 이메일 
     fr_address varchar2(20),-- 친구주소
-    fr_regdata date default sysdate+1,--등록 시간
+    fr_regdata date default sysdate,--등록 시간
     constraint basic_idx_pk PRIMARY KEY (idx)
 );
 
@@ -43,3 +43,4 @@ create table phoneinfo_com(
 ); 
 
 desc  phoneinfo_com;
+
