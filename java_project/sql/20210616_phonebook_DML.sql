@@ -71,4 +71,4 @@ create sequence pi_idx_pk;
 create sequence pi_u_idx_pk start with 5 increment by 1;
 create sequence pi_c_idx_pk start with 5 increment by 1;
 
-
+commit;
