@@ -1,0 +1,4 @@
+1. 데이터를 저장하는 클래스 정의
+  Value Object
+2. 데이터베이스의 dept테이블의 데이터를 CURD
+3. DAO : Data Access Object
