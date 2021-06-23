@@ -20,8 +20,8 @@ public class CarMain {
 		}
 		
 		Cmanager.CarList();
-//		Cmanager.inputCarData();
-//		Cmanager.editCar();
+	//	Cmanager.inputCarData();
+	//	Cmanager.editCar();
 //		Cmanager.delCar();
 		
 	}
