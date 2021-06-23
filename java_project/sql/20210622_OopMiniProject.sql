@@ -36,25 +36,27 @@ carname varchar2(20) not null,
 carsize varchar2(10) not null,
 carseat number(2) not null,
 caryear number(4) not null,
-fuel varchar2(20) not null
+fuel varchar2(20) not null,
+rent char(1) constraint car_rent_ck check(rent = '0' or rent = '1')
 )
 ;
+
 desc car;
 select * from car;
 
-insert into car values(1, '1111', 'RAY', 'SMALL', 5, 2017, '가솔린');
-insert into car values(2, '2222', 'NIRO EV', 'SMALL', 5, 2022, '전기');
-insert into car values(3, '3333', 'SONATA', 'MIDDLE', 5, 2020, '가솔린');
-insert into car values(4, '4444', 'MODEL3', 'MIDDLE', 5, 2020, '전기');
-insert into car values(5, '5555', 'BMW X7', 'BIG', 7, 2020, '가솔린');
-insert into car values(6, '6666', 'CARNIVAL', 'BIG', 9, 2021, '가솔린');
+insert into car values(1, '1111', 'RAY', 'SMALL', 5, 2017, '가솔린','1');
+insert into car values(2, '2222', 'NIRO EV', 'SMALL', 5, 2022, '전기','1');
+insert into car values(3, '3333', 'SONATA', 'MIDDLE', 5, 2020, '가솔린','1');
+insert into car values(4, '4444', 'MODEL3', 'MIDDLE', 5, 2020, '전기','1');
+insert into car values(5, '5555', 'BMW X7', 'BIG', 7, 2020, '가솔린','1');
+insert into car values(6, '6666', 'CARNIVAL', 'BIG', 9, 2021, '가솔린','1');
 
 CREATE SEQUENCE car_idx_SEQ
 INCREMENT BY 1
 START WITH 1;
 
-
-
+select * from car;
+select * from manager;
 create table manager(
 idx number(4) constraint manager_idx_pk primary key,
 mid varchar2(20) not null,
@@ -89,4 +91,15 @@ select * from rent;
 CREATE SEQUENCE rent_idx_SEQ
 INCREMENT BY 1
 START WITH 1;
+
+select * from car;
+commit;
+--drop table rent;
+--drop table car;
+--drop table member;
+--drop table manager;
+--drop sequence manager_idx_seq;
+--drop sequence member_idx_seq;
+--drop sequence Car_idx_seq;
+--drop sequence rent_idx_seq;
 -----------------------------------------------------
