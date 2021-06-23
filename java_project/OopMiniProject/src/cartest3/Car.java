@@ -2,7 +2,7 @@ package cartest3;
 
 public class Car {
 	
-	int idx;
+	int carcode;
 
 	private String carnumber;
 	private String carname;
@@ -13,10 +13,10 @@ public class Car {
 	private String rent;
 	
 	
-	public Car(int idx, String carnumber, String carname,
+	public Car(int carcode, String carnumber, String carname,
 			String carsize, int carseat, int caryear, String fuel, String rent) {
 		super();
-		this.idx = idx;
+		this.carcode = carcode;
 		this.carnumber = carnumber;
 		this.carname = carname;
 		this.carsize = carsize;
@@ -28,14 +28,14 @@ public class Car {
 
 
 
-	public int getIdx() {
-		return idx;
+	public int getCarcode() {
+		return carcode;
 	}
 
 
 
-	public void setIdx(int idx) {
-		this.idx = idx;
+	public void setCarcode(int carcode) {
+		this.carcode = carcode;
 	}
 
 
@@ -126,7 +126,7 @@ public class Car {
 
 	@Override
 	public String toString() {
-		return "Car [idx=" + idx + ", carnumber=" + carnumber + 
+		return "Car [carcode=" + carcode + ", carnumber=" + carnumber + 
 				", carname=" + carname + ", carsize=" + carsize
 				+ ", carseat=" + carseat + ", caryear=" + caryear +
 				", fuel=" + fuel + "]";

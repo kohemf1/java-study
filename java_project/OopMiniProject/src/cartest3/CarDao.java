@@ -33,7 +33,7 @@ public class CarDao {
 		try {
 			Cstmt = conn.createStatement();
 
-			String sql = "select * from Car order by idx";
+			String sql = "select * from Car order by carcode";
 
 			// 결과받기
 			Crs = Cstmt.executeQuery(sql);
@@ -154,9 +154,9 @@ public class CarDao {
 	}
 
 	int rentCar(Connection conn, String rent, String carnumber) {
-				// 원래는 boolean 타입을 사용하여 차량번호만 받아 대여 상태를 표시하고 싶었지만
-				// sql에서 boolean타입을 처리하는법과 대여 메소드를 만드는 법을 해결하지 못하여
-				// 사용자에게 0 과1 을 입력 받음으로 자동차의 대여현황이 변화는 방법으로 선회하였습니다.
+		// 원래는 boolean 타입을 사용하여 차량번호만 받아 대여 상태를 표시하고 싶었지만
+		// sql에서 boolean타입을 처리하는법과 대여 메소드를 만드는 법을 해결하지 못하여
+		// 사용자에게 0 과1 을 입력 받음으로 자동차의 대여현황이 변화는 방법으로 선회하였습니다.
 		int result = 0;
 
 		//전달받은 Car객체의 데이터로 테이블에 저장 -> 결과값 반환
@@ -168,7 +168,7 @@ public class CarDao {
 			Cpstmt = conn.prepareStatement(sql);
 			Cpstmt.setString(1, rent);
 			Cpstmt.setString(2, carnumber);
-			
+
 			result = Cpstmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -200,7 +200,7 @@ public class CarDao {
 			Cpstmt = conn.prepareStatement(sql);
 			Cpstmt.setString(1, rent);
 			Cpstmt.setString(2, carnumber);
-			
+
 			result = Cpstmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -219,9 +219,43 @@ public class CarDao {
 		return result;
 	}
 
+
+	public static int renting(Connection conn, String carnumber) {
+
+		int result = 0;
+
+		//전달받은 Car객체의 데이터로 테이블에 저장 -> 결과값 반환
+		PreparedStatement Cpstmt = null;
+		try {
+			String sql = 
+					"select rent from car where carnumber=? ";		
+
+			Cpstmt = conn.prepareStatement(sql);
+
+			Cpstmt.setString(1, carnumber);
+
+			result = Cpstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if(Cpstmt != null) {
+				try {
+					Cpstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
+
+
 	// 테이블 데이터 삭제
 	// 사용자한테 코드번호 받아서 처리
-	int deleteCar(Connection conn, int idx) {
+	int deleteCar(Connection conn, int carcode) {
 
 		int result = 0;
 
@@ -229,11 +263,11 @@ public class CarDao {
 		PreparedStatement Cpstmt = null;
 
 
-		String sql = "delete from Car where idx=?";
+		String sql = "delete from Car where carcode=?";
 
 		try {
 			Cpstmt = conn.prepareStatement(sql);
-			Cpstmt.setInt(1, idx);
+			Cpstmt.setInt(1, carcode);
 
 			result = Cpstmt.executeUpdate();
 

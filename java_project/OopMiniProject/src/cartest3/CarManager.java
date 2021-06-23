@@ -40,7 +40,7 @@ public class CarManager {
 			
 			for(Car car : Clist) {
 				System.out.printf("%d\t%s\t%s\t%s\t%d\t%d\t%s\t%s\n",
-				car.getIdx(),
+				car.getCarcode(),
 				car.getCarnumber(),
 				car.getCarname(),
 				car.getCarsize(),
@@ -189,6 +189,7 @@ public class CarManager {
 			
 //			String editCarData = sc.nextLine();
 //			String[] ecardata = editCarData.split(" ");
+//			renting.
 			String rent = sc.nextLine();
 			System.out.println("반납할 차량번호 입력");
 			String carnumber = sc.nextLine();
@@ -202,11 +203,19 @@ public class CarManager {
 //					ecardata[7]);
 			
 			int result = Cdao.rentCar(conn, rent, carnumber);
+//			System.out.println(result);
+//			if(!rent.equals(rent) ) {
+//				System.out.println("반납 완료");
+//			} else if(rent.equals(rent)) {
+//				System.out.println("반납 실패");
+//			}
+			
+			
 			
 			if(result > 0) {
-				System.out.println("수정 완료");
-			} else {
-				System.out.println("수정 실패");
+				System.out.println("반납 완료");
+			} else  {
+				System.out.println("반납 실패");
 			}
 		
 		} catch (SQLException e) {
@@ -228,9 +237,9 @@ public class CarManager {
 		
 		CarList();
 		System.out.println("삭제를 원하시는 코드번호를 입력해주세요");
-		int idx = Integer.parseInt(sc.nextLine());
+		int carcode = Integer.parseInt(sc.nextLine());
 		
-		int result = Cdao.deleteCar(conn, idx);
+		int result = Cdao.deleteCar(conn, carcode);
 		
 		if(result > 0) {
 			System.out.println("삭제 완료");
