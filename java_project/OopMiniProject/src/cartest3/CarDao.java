@@ -154,14 +154,16 @@ public class CarDao {
 	}
 
 	int rentCar(Connection conn, String rent, String carnumber) {
-
+				// 원래는 boolean 타입을 사용하여 차량번호만 받아 대여 상태를 표시하고 싶었지만
+				// sql에서 boolean타입을 처리하는법과 대여 메소드를 만드는 법을 해결하지 못하여
+				// 사용자에게 0 과1 을 입력 받음으로 자동차의 대여현황이 변화는 방법으로 선회하였습니다.
 		int result = 0;
 
 		//전달받은 Car객체의 데이터로 테이블에 저장 -> 결과값 반환
 		PreparedStatement Cpstmt = null;
 		try {
 			String sql = 
-					"update car set rent=? where carnumber=? ";		
+					"update car set rent=? where carnumber=? ";	 // 
 
 			Cpstmt = conn.prepareStatement(sql);
 			Cpstmt.setString(1, rent);

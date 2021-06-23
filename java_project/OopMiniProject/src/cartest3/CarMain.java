@@ -19,12 +19,12 @@ public class CarMain {
 			e.printStackTrace();
 		}
 		
-//		Cmanager.CarList(); -- 카 리스트 출력			
-//		Cmanager.rentCar(); -- 자동차 대여
-//		Cmanager.returnCar(); -- 자동차 반납
-//		Cmanager.inputCarData(); -- 자동차 추가
-//		Cmanager.editCar(); -- 자동차 정보 수정
-//		Cmanager.delCar(); -- 자동차 삭제
+//		Cmanager.CarList(); // 카 리스트 출력			
+//		Cmanager.rentCar(); // 자동차 대여
+//		Cmanager.returnCar(); // 자동차 반납
+//		Cmanager.inputCarData(); // 자동차 추가
+//		Cmanager.editCar(); // 자동차 정보 수정
+//		Cmanager.delCar(); // 자동차 삭제
 
 	}
 

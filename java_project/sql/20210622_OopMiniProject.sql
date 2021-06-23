@@ -37,7 +37,9 @@ carsize varchar2(10) not null,
 carseat number(2) not null,
 caryear number(4) not null,
 fuel varchar2(20) not null,
-rent char(1) constraint car_rent_ck check(rent = '0' or rent = '1')
+rent char(1) constraint car_rent_ck check(rent = '0' or rent = '1') 
+-- rent 는 대여현황을 체크하기 위한 컴럼으로 
+-- 0 이면 대여가 가능한 상태임을 나타내고 1이면 대여중임을 나타낸다
 )
 ;
 
