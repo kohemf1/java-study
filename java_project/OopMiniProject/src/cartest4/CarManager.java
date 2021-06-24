@@ -146,9 +146,9 @@ public class CarManager {
 			int result = Cdao.rentCar(conn, rent, carnumber);
 			
 			if(result > 0) {
-				System.out.println("수정 완료");
+				System.out.println("대여 완료");
 			} else {
-				System.out.println("수정 실패");
+				System.out.println("대여 실패");
 			}		
 		} catch (SQLException e) {
 			e.printStackTrace();
