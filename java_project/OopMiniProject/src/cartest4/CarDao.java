@@ -111,9 +111,10 @@ public class CarDao {
 		PreparedStatement Cpstmt = null;
 		try {
 			String sql = 
-					"update car set carnumber=?,carname=?,carsize=?,carseat=?,caryear=?,fuel=?,rent=? ";		
+					"update car set carnumber=?,carname=?,carsize=?,carseat=?,caryear=?,fuel=?,rent=? where carcode=?";		
 
 			Cpstmt = conn.prepareStatement(sql);
+			Cpstmt.setInt(8, car.getCarcode());
 			Cpstmt.setString(1, car.getCarnumber());
 			Cpstmt.setString(2, car.getCarname());
 			Cpstmt.setString(3, car.getCarsize());
@@ -148,7 +149,7 @@ public class CarDao {
 		PreparedStatement Cpstmt = null;
 		try {
 			String sql = 
-					"update car set rent=? where carnumber=? ";	 // 
+					"update car set rent=? where rent !=0 carnumber=? ";	 // 
 
 			Cpstmt = conn.prepareStatement(sql);
 			Cpstmt.setString(1, rent);
@@ -179,7 +180,7 @@ public class CarDao {
 		PreparedStatement Cpstmt = null;
 		try {
 			String sql = 
-					"update car set rent=? where carnumber=? ";		
+					"update car set rent=? where rent !=0  and carnumber=?  ";		
 
 			Cpstmt = conn.prepareStatement(sql);
 			Cpstmt.setString(1, rent);
@@ -194,39 +195,6 @@ public class CarDao {
 				try {
 					Cpstmt.close();
 				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		return result;
-	}
-
-	
-	public static int renting(Connection conn, String carnumber) {
-
-		int result = 0;
-
-		//전달받은 Car객체의 데이터로 테이블에 저장 -> 결과값 반환
-		PreparedStatement Cpstmt = null;
-		try {
-			String sql = 
-					"select rent from car where carnumber=? ";		
-
-			Cpstmt = conn.prepareStatement(sql);
-
-			Cpstmt.setString(1, carnumber);
-
-			result = Cpstmt.executeUpdate();
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			if(Cpstmt != null) {
-				try {
-					Cpstmt.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

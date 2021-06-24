@@ -99,7 +99,11 @@ public class CarManager {
 		
 		try {
 			conn = DriverManager.getConnection(OOP1,user,pw);
-		
+			
+			CarList();
+			
+			System.out.println("자동차 코드를 입력해주세요");
+			int carcode  = sc.nextInt();
 			System.out.println("정보를 수정합니다.");
 			System.out.println("차번호 차이름 차크기 탑승인원 연식 연료");
 			System.out.println("순서로 입력해주세요");
@@ -161,13 +165,18 @@ public class CarManager {
 		
 		try {
 			conn = DriverManager.getConnection(OOP1,user,pw);
+			
+			
 			rentList();
-			System.out.println("반납할거면 0 을 입력");
-			String rent = sc.nextLine();
+			
 			System.out.println("반납할 차량번호 입력");
 			String carnumber = sc.nextLine();
+			System.out.println("반납할거면 0 을 입력");
+			String rent = sc.nextLine();
+//			System.out.println("반납할 차량번호 입력");
+//			String carnumber = sc.nextLine();
 			
-			int result = Cdao.rentCar(conn, rent, carnumber);
+			int result = Cdao.returnCar(conn, rent, carnumber);
 		
 			if(result > 0) {
 				System.out.println("반납 완료");
@@ -181,10 +190,6 @@ public class CarManager {
 	}
 
 	// 렌트 중인 차량 목록
-	//데이터 삭제
-	// 사용자한테 idx입력받아 데이터삭제
-	
-	
 	void rentList() {
 		Connection conn = null;
 		String OOP1 = "jdbc:oracle:thin:@localhost:1521:xe";
