@@ -223,6 +223,9 @@ public class CarManager {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
 	//데이터 삭제
 	// 사용자한테 idx입력받아 데이터삭제
 	
