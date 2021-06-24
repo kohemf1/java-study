@@ -13,9 +13,13 @@ address varchar2(40) not null
 desc member;
 select * from member;
 
+select * from member
+
 CREATE SEQUENCE member_membercode_SEQ
 INCREMENT BY 1
 START WITH 1;
+
+select * from car where rent = 0 ;
 
 insert into member values
 (MEMBER_MEMBERCODE_SEQ.nextval, 'member1', '123456', '손흥민', '123456-1234567', 'member1@naver.com', 'SEOUL');
