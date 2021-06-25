@@ -137,22 +137,26 @@ public class CarManager {
 		try {
 			conn = DriverManager.getConnection(OOP1, user, pw);
 			availableList();
+			
 			System.out.println("대여할거면  1 을 입력");
 			String rent = sc.nextLine();
 			System.out.println("대여할 차량번호 입력");
 			String carnumber = sc.nextLine();
-
+			
 			int result = Cdao.rentCar(conn, rent, carnumber);
 
 			if (result > 0) {
 				System.out.println("대여 완료");
-			} else {
+			}
+			 else {
 				System.out.println("대여 실패");
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+//			e.printStackTrace();	
+			System.out.println("다시입력");
+			
+		} 
+	} 
 
 	// 자동차 반납
 	void returnCar() {
@@ -184,6 +188,7 @@ public class CarManager {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		
 		}
 	}
 
@@ -248,6 +253,35 @@ public class CarManager {
 
 	}
 
+	void carSize() {
+		Connection conn = null;
+		String OOP1 = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "hr";
+		String pw = "tiger";
+
+		try {
+			conn = DriverManager.getConnection(OOP1, user, pw);
+
+			List<Car> Clist = Cdao.carsize(conn);
+			System.out.println("차량목록");
+			System.out.println("------------------");
+			System.out.println("코드번호\t차번호\t차이름 \t차크기\t탑승인원 \t연식\t연료");
+			System.out.println("--------------------------------------------------");
+
+			for (Car car : Clist) {
+				System.out.printf("%d\t%s\t%s\t%s\t%d\t%d\t%s\n", car.getCarcode(), car.getCarnumber(),
+						car.getCarname(), car.getCarsize(), car.getCarseat(), car.getCaryear(), car.getFuel());
+			}
+
+			System.out.println("------------------------------------------");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	
 	// 자동차 삭제
 
 	void delCar() {

@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLSyntaxErrorException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 public class CarDao {
 
+	private String carsize;
 	private CarDao() {	
 	}
 	//클래스 내부 인스턴스
@@ -20,7 +22,7 @@ public class CarDao {
 
 	//데이터 검색
 	//매개변수Connection 객체 Statement를 만들기위해
-	ArrayList<Car> getCarList(Connection conn){
+	ArrayList<Car> getCarList(Connection conn) {
 
 		ArrayList<Car> Clist = null;
 
@@ -55,11 +57,12 @@ public class CarDao {
 
 			if(Crs != null) {
 				try {
+					Crs.close();
 					Cstmt.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-			}
+			} 
 		}
 		return Clist;
 	}
@@ -93,6 +96,7 @@ public class CarDao {
 		} finally {
 			if(Cpstmt != null) {
 				try {
+					
 					Cpstmt.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -159,15 +163,15 @@ public class CarDao {
 			result = Cpstmt.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		} finally {
 			if(Cpstmt != null) {
 				try {
 					Cpstmt.close();
 				} catch (SQLException e) {
-					e.printStackTrace();
+//					e.printStackTrace();
 				}
-			}
+			} 
 		}
 		return result;
 	}
@@ -237,6 +241,7 @@ public class CarDao {
 		} finally {
 			if(Crs != null) {
 				try {
+					Crs.close();
 					Cstmt.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -257,7 +262,7 @@ public class CarDao {
 		try {
 			Cstmt = conn.createStatement();
 
-			String sql = "select * from Car where rent = '0' order by carcode";
+			String sql = "select * from Car where rent = 0 order by carcode";
 
 			// 결과받기
 			Crs = Cstmt.executeQuery(sql);
@@ -278,9 +283,10 @@ public class CarDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-
+			
 			if(Crs != null) {
 				try {
+//					Crs.close();
 					Cstmt.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -290,6 +296,56 @@ public class CarDao {
 		return Clist;
 	}
 
+	ArrayList<Car> carsize(Connection conn){
+
+		ArrayList<Car> Clist = null;
+
+		//DB select결과를 Clist에저장
+		
+		Statement Cstmt = null;
+		ResultSet Crs = null;
+
+		
+		try {
+			Cstmt = conn.createStatement();
+
+			String sql = "select * from Car where carsize = 'SMALL'";
+			
+			
+			// 결과받기
+			Crs = Cstmt.executeQuery(sql);
+			
+			
+			
+			Clist = new ArrayList<>();
+			//데이터를 Car 객체로 생성 (list)
+			while(Crs.next()) {
+				Clist.add(new Car(Crs.getInt(1),
+						Crs.getString(2),
+						Crs.getString(3),
+						Crs.getString(4),
+						Crs.getInt(5),
+						Crs.getInt(6),
+						Crs.getString(7),
+						Crs.getString(8)));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+
+			if(Crs != null) {
+				try {
+					Crs.close();
+					Cstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return Clist;
+	}
+	
 	// 테이블 데이터 삭제
 	// 사용자한테 코드번호 받아서 처리
 	int deleteCar(Connection conn, int carcode) {
