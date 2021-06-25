@@ -168,12 +168,13 @@ public void insertMember() {
 		int result = dao.insertMember(conn, member);
 		
 		if(result > 0) {
-			System.out.println("처리되었습니다.");
+			System.out.println("회원가입이 정상적으로 처리되었습니다.");
 		} else {
-			System.out.println("입력 실패!!!!");
+//			System.out.println("입력 실패!!!!");
+			System.out.println("정보를 잘못입력하여 초기화면으로 돌아갑니다.");
 		}
 	} catch (SQLException e) {
-		e.printStackTrace();
+//		e.printStackTrace();
 	}
 }
 

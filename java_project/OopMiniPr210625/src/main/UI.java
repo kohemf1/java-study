@@ -48,6 +48,7 @@ public class UI {
 			case 4 :
 				System.out.println("프로그램을 종료 합니다.");
 				System.exit(0);
+				
 			}
 		}
 	}
@@ -106,9 +107,11 @@ public class UI {
 			switch(num) {	
 			case 1 :
 				//대여 메서드
+				
 				System.out.println("대여합니다.");
-				cm.rentCar();
+							
 				cm.rentCar2();
+				cm.rentCar();				
 			
 				break;
 			case 2 : 
@@ -140,8 +143,13 @@ public class UI {
 	
 	//2번 비회원 선택시
 	public void menuNoneMM() {
+		try {
 		System.out.println("회원가입을 시작합니다.");
 		mm.insertMember();
+		} catch (ArrayIndexOutOfBoundsException e) {} // 회원가입 정보 잘못 입력시 예외처리 후 초기화면으로 돌아가게함
+		finally {
+			start();
+		}
 		System.out.println("회원가입이 완료되었습니다.");		
 		start();
 	}

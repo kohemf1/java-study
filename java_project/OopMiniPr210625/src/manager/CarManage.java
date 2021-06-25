@@ -136,7 +136,7 @@ public class CarManage {
 		
 		try {
 			conn = DriverManager.getConnection(OOP1,user,pw);
-			availableList();
+//			availableList();
 			System.out.println("대여할 차량번호 입력");
 			String carnumber = scan.nextLine();
 			
@@ -146,6 +146,7 @@ public class CarManage {
 				System.out.println("대여할 차량의 정보가 변경되었습니다.");
 			}else {
 				System.out.println("수정 실패");
+				
 			}
 			
 		}catch (SQLException e) {
@@ -162,7 +163,7 @@ public	void rentCar2() {
 		
 		try {
 			conn = DriverManager.getConnection(OOP1,user,pw);
-			
+			availableList();
 			System.out.println("대여할 기간을 입력하세요.");
 			String period = scan.nextLine();
 			System.out.println("자동차 번호를 입력하세요.");
@@ -178,11 +179,12 @@ public	void rentCar2() {
 				if(result > 0) {
 					System.out.println("대여가 완료 되었습니다.");
 				}else {
-					System.out.println("번호를 다시 입력하세요.");
+					System.out.println("잘못입력 하셨습니다.");
 				} 			
 		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//			e.printStackTrace();
+		} catch (Exception e) { // 기간, 번호 , 면허등을 잘못입력했을때 나오는 오류 예외처리			
+		} 
 	}
 
 	// 자동차 반납

@@ -281,8 +281,9 @@ public class ManagerDao {
 			result = Cpstmt.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
+//			e.printStackTrace();
+		} catch ( Exception e) {} // 잘못입력시 예외처리
+		finally {
 			if(Cpstmt != null) {
 				try {
 					Cpstmt.close();
@@ -310,13 +311,13 @@ public class ManagerDao {
 			result = Cpstmt.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		} finally {
 			if(Cpstmt != null) {
 				try {
 					Cpstmt.close();
 				} catch (SQLException e) {
-					e.printStackTrace();
+//					e.printStackTrace();
 				}
 			}
 		}
