@@ -276,8 +276,8 @@ public class ManagerDao {
 			Cpstmt.setString(2, period);
 			Cpstmt.setString(3, carnumber);
 			Cpstmt.setString(4, carreg);
-
-
+			
+			
 
 			result = Cpstmt.executeUpdate();
 

@@ -162,16 +162,22 @@ public	void rentCar2() {
 		String user = "hr";
 		String pw = "tiger";
 		
+		availableList();
+		while(true) {
 		try {
 			conn = DriverManager.getConnection(OOP1,user,pw);
-			availableList();
+			
+			
 			System.out.println("대여할 기간을 입력하세요.");
 			String period = scan.nextLine();
 			System.out.println("자동차 번호를 입력하세요.");
 			String carnumber = scan.nextLine();
 			System.out.println("이용자의 운전면허 번호를 입력하세요.");
 			String carreg = scan.nextLine();
-	
+			
+			
+			
+			
 			//2021 06.24
 		//예외 처리 추가 1이외에 다른 데이터가 들어올시 예외처리 
 		//문제점 : 차번호 입력시 db에 없는 값이 들어와도 대여완료가 출력		
@@ -179,6 +185,7 @@ public	void rentCar2() {
 //			rentCar();		
 				if(result > 0) {
 //					System.out.println("대여가 완료 되었습니다.");
+					break;
 				}else {
 					System.out.println("잘못입력 하셨습니다.");
 					return;
@@ -187,6 +194,7 @@ public	void rentCar2() {
 //			e.printStackTrace();
 		} catch (Exception e) { // 기간, 번호 , 면허등을 잘못입력했을때 나오는 오류 예외처리			
 		} 
+		}
 	}
 
 	// 자동차 반납
