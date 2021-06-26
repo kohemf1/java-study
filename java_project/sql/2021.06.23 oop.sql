@@ -61,8 +61,13 @@ insert into rent values(rent_rentcode_seq.nextval,10000,3,sysdate+3,(select carc
 
 
 
+select c.carname, r.rent_date, r.pay , r.rentperiod from car c, member m, rent r
+where 
+m.membercode = ( select membercode from member where id = 'm1')
+and m.membercode = r.membercode and r.carcode = c.carcode
+;
 
-
+update car set rentck = 0 where carcode = 2 or carcode = 1 ;
 
 select * from car;
 select * from rent;
@@ -72,7 +77,13 @@ delete from rent natural join car on carnumber = '1111';
 delete from rent
 where carcode = (select carcode from car where carnumber = '1111');
 
+select r.pay, r.rentperiod,r.rent_date   from car c, member m, rent r
+where m.membercode = ( select membercode from member where id = 'm1')
+and m.membercode = r.membercode and r.carcode = c.carcode
+;
 
+select * from rent_info 
+where membercode = ( select membercode from member where id = 'm1');
 
 insert into rent values(rent_rentcode_seq.nextval,10000,3,sysdate+3,(select carcode from car where carnumber = 3333),(select membercode from member where carreg = 1113),1,1);
 select * from rent ;

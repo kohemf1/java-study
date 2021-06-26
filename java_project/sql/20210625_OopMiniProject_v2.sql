@@ -115,7 +115,7 @@ sum number
 ;
 
 --delete from prioce;
-
+select * from car;
 commit;
 -------------------------------
 --select * from car;

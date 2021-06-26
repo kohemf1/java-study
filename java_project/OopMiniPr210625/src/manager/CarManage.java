@@ -143,7 +143,8 @@ public class CarManage {
 			int result = dao.checkRentCar(conn, carnumber);
 			
 			if(result > 0)	{
-				System.out.println("대여할 차량의 정보가 변경되었습니다.");
+//				System.out.println("대여할 차량의 정보가 변경되었습니다.");
+				System.out.println("대여가 완료되었습니다");
 			}else {
 				System.out.println("수정 실패");
 				
@@ -175,11 +176,12 @@ public	void rentCar2() {
 		//예외 처리 추가 1이외에 다른 데이터가 들어올시 예외처리 
 		//문제점 : 차번호 입력시 db에 없는 값이 들어와도 대여완료가 출력		
 			int result = dao.rentCar(conn, period, carnumber,carreg);
-						
+//			rentCar();		
 				if(result > 0) {
-					System.out.println("대여가 완료 되었습니다.");
+//					System.out.println("대여가 완료 되었습니다.");
 				}else {
 					System.out.println("잘못입력 하셨습니다.");
+					return;
 				} 			
 		} catch (SQLException e) {
 //			e.printStackTrace();
@@ -204,7 +206,7 @@ public	void returnCar() {
 				int result = dao.checkReturnCar(conn,carnumber);
 		
 				if(result > 0) {
-					System.out.println("차량의 정보가 변경되었습니다.");
+//					System.out.println("차량의 정보가 변경되었습니다.");
 				} else  {
 					System.out.println("변경되지 않았습니다.");
 				}				
@@ -313,4 +315,40 @@ public	void availableList() {
 			e.printStackTrace();
 		}		
 	}
+
+
+
+public void infoList() {
+	Connection conn = null;
+
+	// 2.연결
+
+	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "hr";
+	String pw = "tiger";
+
+	try {
+		conn = DriverManager.getConnection(jdbcUrl, user, pw);
+
+		
+
+		System.out.println("id 입력");
+		int id = Integer.parseInt(scan.nextLine());
+
+		int result = dao.deleteCar(conn, id);
+
+		if (result > 0) {
+			System.out.println("차량이 삭제되었습니다.");
+		} else {
+			System.out.println("차량의 정보가 없습니다.");
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+}
+
+
+
+
+
 }

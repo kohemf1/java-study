@@ -55,8 +55,7 @@ public class UI {
 	//1번 회원 선택시
 	// 멤버 로그인
 	public void memberLogin() {
-		
-		System.out.println("멤버 로그인");
+
 		System.out.println("회원의 아이디를 입력하세요.");
 		String id = getUserInput();
 		System.out.println("회원의 비밀번호를 입력하세요.");
@@ -91,7 +90,7 @@ public class UI {
 		//2021 06 24
 		//회원정보 수정, 결제기능 추가 x -> 
 		int num = 0;
-		System.out.println("회원 로그인을 진행해주세요.");
+//		System.out.println("회원 로그인을 진행해주세요.");
 		//로그인
 		if(ck == false) {
 			System.out.println("로그인을 합니다.");
@@ -108,7 +107,7 @@ public class UI {
 			case 1 :
 				//대여 메서드
 				
-				System.out.println("대여합니다.");
+//				System.out.println("대여합니다.");//
 							
 				cm.rentCar2();
 				cm.rentCar();				
@@ -134,9 +133,12 @@ public class UI {
 				System.out.println("로그아웃되었습니다.");
 				logout();
 				start();
+				
 				//로그인 상태가 아닌경우 
+
 				}
-						
+			case 6 :
+				cm.infoList();		
 			}					
 		}		
 	}

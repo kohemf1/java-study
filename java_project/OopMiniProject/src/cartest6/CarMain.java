@@ -33,7 +33,7 @@ public class CarMain {
 //		case 1 :
 //			
 //			
-		Cmanager.rentCar(); // 자동차 대여
+//		Cmanager.rentCar(); // 자동차 대여
 //			
 //		break;
 //		}
@@ -43,7 +43,7 @@ public class CarMain {
 //		Cmanager.inputCarData(); // 자동차 추가
 //		Cmanager.editCar(); // 자동차 정보 수정
 //		Cmanager.delCar(); // 자동차 삭제
-//		Cmanager.rentList(); // 대여중인 차량
+		Cmanager.rentList(); // 대여중인 차량
 //		Cmanager.availableList(); // 대여 가능 차량
 	}
 
