@@ -57,10 +57,28 @@ managercode number constraint rent_managercode_fk REFERENCES manager(managercode
 insert into rent values(rent_rentcode_seq.nextval,10000,3,sysdate+3,(select carcode from car where carnumber = 3333),(select membercode from member where carreg = 1113),1);
 
 
+--------------------------------
+create table pay(
+paycode number(4) constraint manager_managercode_pk primary key,
+charge number(8),
+membercode number constraint rent_membercode_fk REFERENCES member(membercode) on delete cascade constraint rent_membercode_uk unique not null
+);
+
+create table paylist(
 
 
 
+)
+;
 
+create table amugua1(
+a number(2),
+b number(2),
+c number(3)
+)
+;
+insert into values(5,5, a*b);
+--------------------------------
 select c.carname, r.rent_date, r.pay , r.rentperiod from car c, member m, rent r
 where 
 m.membercode = ( select membercode from member where id = 'm1')
@@ -77,6 +95,8 @@ delete from rent natural join car on carnumber = '1111';
 delete from rent
 where carcode = (select carcode from car where carnumber = '1111');
 
+
+--고객 렌트 정보
 select r.pay, r.rentperiod,r.rent_date   from car c, member m, rent r
 where m.membercode = ( select membercode from member where id = 'm1')
 and m.membercode = r.membercode and r.carcode = c.carcode
@@ -91,7 +111,7 @@ select to_char(rent_date, 'yyyy-mm-dd hh24:mi:ss') from rent;
 select * from rent;
 --데이터 출력
 desc member;
-
+desc rent;
 
 
 

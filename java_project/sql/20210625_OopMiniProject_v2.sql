@@ -118,10 +118,10 @@ sum number
 select * from car;
 commit;
 -------------------------------
---select * from car;
---select * from memeber;
---select * from manager;
---select * from rent;
+select * from car;
+select * from member;
+select * from manager;
+select * from rent;
 --drop table rent;
 --drop table car;
 --drop table member;
