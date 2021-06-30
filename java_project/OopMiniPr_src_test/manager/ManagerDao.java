@@ -557,7 +557,9 @@ public class ManagerDao {
 		ResultSet rs = null;
 
 		try {
-			String sql = "select r.rentcode, c.carnumber, c.carname, c.carsize, m.id, m.name, m.carreg, r.pay,r.rentperiod,r.rent_date from car c, member m, rent r where c.carcode = r.carcode and m.membercode = r.membercode and m.id = ?";
+			String sql = "select r.rentcode, c.carnumber, c.carname, c.carsize, m.id, m.name, m.carreg, "
+					+ "r.pay,r.rentperiod,r.rent_date from car c, member m, rent r"
+					+ " where c.carcode = r.carcode and m.membercode = r.membercode and m.id = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();

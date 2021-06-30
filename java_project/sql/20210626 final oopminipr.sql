@@ -5,7 +5,7 @@ drop table rent;
 drop table member;
 drop table car;
 drop table manager;
-
+drop table pay;
 --데이터 삭제
 delete from member;
 delete from car;
