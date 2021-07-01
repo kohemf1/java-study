@@ -13,7 +13,7 @@ address varchar2(40) not null
 desc member;
 select * from member;
 
-select * from member
+select * from member;
 
 CREATE SEQUENCE member_membercode_SEQ
 INCREMENT BY 1
