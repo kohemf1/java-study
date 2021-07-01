@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    body {
+        margin-top : 30px;
+    }
+
+    .border {
+        border : 1px solid black;
+    }
+
+    .text_center {
+        text-align: center;
+    }
+
+    .div_center {
+        margin : 0 auto;
+    }
+
+    header{
+        width:768px;
+        height : 118px;
+        /* line-height: 118px; */
+
+        padding-left: 30px;
+        position: relative;
+        
+    }
+
+    header>h1 {
+        margin-top: 29px;
+    }
+
+    header>h1>p {
+        font-size: 0.5em;
+        line-height: 10px;
+        /* display:inline-block; */
+    }
+
+
+    nav{
+        width:798px;
+        height : 28px;
+        line-height: 28px;
+    }
+
+    hr {
+        width:800px;
+        margin : 15px auto;
+    }
+    .menu {
+
+        float: left;
+        padding-left: 10px;
+        color: black;
+        text-decoration: none;
+        
+    }
+
+    input[type=text]{
+
+        width:200px;
+
+        float: right;
+        margin-top : 5px;
+        /* margin-right : 30px; */
+        
+        border-radius: 20% 0% 0% 20%;
+
+        /* position: relative; */
+        
+        
+    }
+    #search{
+        /* width:50px; */      
+        float:right;
+        color: black;
+        text-decoration: none;
+    }
+    #wrap{
+        width:800px;
+        height:1298px;
+        
+    }
+    #wrap>h2{
+       
+        display: inline-block;
+    }
+    #wrap>h4{
+        display: inline-block;
+    }
+    section {
+        width : 598px;
+        height :598px;
+       
+       
+    }
+
+    aside {
+        width : 96px;
+        height : 298px;
+        float: right;
+    }
+
+    aside>ul{
+        font-size: 1.3em;
+        margin : 30px 0px;
+        font-weight: bold;
+    }
+    aside>ul>li{
+        font-size: 0.8em;
+        list-style-type: none;
+        margin: 5px;
+        font-weight: initial;
+    }
+
+    #wrap>hr{
+        width :598px;
+        margin : 15px 0;
+    }
+    footer {
+        width : 798px;
+        height : 48px;
+    }
+</style>
+<body>
+    <header class="border div_center border">
+        <h1>html5 example preview
+            <p>한빛아카데미</p>
+        </h1>
+        
+    </header>
+    
+    <hr>
+    <nav class="div_center">
+        <div>
+            <a href="#" class="menu ">HTML5</a>
+            <a href="#" class="menu ">CSS3</a>
+            <a href="#" class="menu ">JavaScript</a>
+        </div>
+        <div >             
+                <a id="search" href="#">
+                검색
+                </a>       
+                <input type = "text" >
+        </div>
+
+        </div>
+    </nav>
+    <hr>
+    <div id="wrap" class="div_center">
+       
+        <aside >
+            <ul> 카테고리
+                <li>데이터</li>
+                <li>데이터</li>
+                <li>데이터</li>
+                <li>데이터</li>
+            </ul>
+            <ul> 최근 글
+                <li>데이터</li>
+                <li>데이터</li>
+                <li>데이터</li>
+                <li>데이터</li>
+            </ul>
+        </aside>
+
+
+        <section >
+            <h2>HTML5 개요와 활동</h2>
+            <h4>2021년7월1일</h4>
+            <br>  
+            <article >
+                <img src="https://via.placeholder.com/430x280" >
+            </article>
+            <br>
+            <p>재난지원금 15조7000억원을 포함한 33조원에 이르는 역대급 추가경정예산이
+                이번에 가능했던 건 올해 국세가 애초 예상보다 31조5000억원 더 걷힐 
+                것으로 전망됐기 때문이다. 더 걷힌 세금의 상당 부분은 집값, 동학개미, 
+                삼성 덕분이다.
+
+                정부가 공개한 올해 주요 세목별 예측 수준 자료에 따르면 올해 본예산 때 
+                예상 총국세는 282조7000억원이었으나 이번에 314조3000억원으로 
+                31조6000억원 늘었다. 경제 회복세에 따른 초과 세수는 16조원 규모로 
+                예상됐다. 법인세가 65조5000억원으로 본예산보다 12조2000억원 늘어났고, 
+                부가가치세는 69조3000억원으로 2조7000억원 증가했다. 
+                배당소득세도 4조1000억원으로 1조1000억원 많아졌다.
+            </p>
+        </section>
+       
+       
+        <hr>
+
+        <section >
+            <h2>HTML5 개요와 활동</h2>
+            <h4>2021년7월1일</h4>
+            <br>  
+            <article >
+                <img src="https://via.placeholder.com/430x280" >
+            </article>
+            <br>
+            <p>재난지원금 15조7000억원을 포함한 33조원에 이르는 역대급 추가경정예산이
+                이번에 가능했던 건 올해 국세가 애초 예상보다 31조5000억원 더 걷힐 
+                것으로 전망됐기 때문이다. 더 걷힌 세금의 상당 부분은 집값, 동학개미, 
+                삼성 덕분이다.
+
+                정부가 공개한 올해 주요 세목별 예측 수준 자료에 따르면 올해 본예산 때 
+                예상 총국세는 282조7000억원이었으나 이번에 314조3000억원으로 
+                31조6000억원 늘었다. 경제 회복세에 따른 초과 세수는 16조원 규모로 
+                예상됐다. 법인세가 65조5000억원으로 본예산보다 12조2000억원 늘어났고, 
+                부가가치세는 69조3000억원으로 2조7000억원 증가했다. 
+                배당소득세도 4조1000억원으로 1조1000억원 많아졌다.
+            </p>
+        </section>
+        <hr>
+    </div>
+
+    
+    <footer class="div_center">이재훈</footer> 
+</body>
+</html>
