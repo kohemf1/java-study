@@ -45,7 +45,7 @@
 
            regForm.submit(function () {
 
-                if (userid.val().length < 1) {
+                if (userid.val().trim().length < 1) {
                     //  alert('아이디입력');
                     
                     $('#userID+div.msg').text('필수');
@@ -54,8 +54,7 @@
                     return false;
                 }
 
-                if (pw.val().length < 1) {
-                    //  alert('아이디입력');
+                if (pw.val().trim().length < 1) {
                     
                     $('#pw+div.msg').html('필수');
                     $('#pw+div.msg').css('display','block');
@@ -63,13 +62,13 @@
                     return false;
                 }
 
-                if (repw.val().length < 1) {
-                    //  alert('아이디입력');
+                if (repw.val().trim().length < 1) {
                     
                     $('#repw+div.msg').html('필수');
                     $('#repw+div.msg').css('display','block');
 
                     return false;
+                    // e.stopPropagation();
                 }
 
                 if(pw.val().trim() != repw.val().trim()){
@@ -80,8 +79,7 @@
                     return false;
                 }
 
-                if (userName.val().length < 1) {
-                    //  alert('아이디입력');
+                if (userName.val().trim().length < 1) {
                     
                     $('#userName+div.msg').html('필수');
                     $('#userName+div.msg').css('display','block');
@@ -92,7 +90,7 @@
 
                 members.push(new Member(userid.value, pw.value, userName.value));
 
-                this.reset();
+                // this.reset();
 
                 setList();
                 return false;
