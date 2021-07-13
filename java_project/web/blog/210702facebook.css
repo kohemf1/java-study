@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic:wght@700&family=Sunflower:wght@500&display=swap');
+
+/* 나눔고딕, 주아 , 선플라워
+font-family: 'Jua', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Sunflower', sans-serif;
+ */
+
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+h1,h2,h3,p,li,
+body,footer,
+div, span {
+    font-size: 16px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+li {
+    margin-left: 20px;
+    list-style: none;
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+    display: block;
+    float: left;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* main 영역 */
+#main_wrap {
+    height: 536px;
+    padding: 72px 0 112px 0;
+    background-color: #f6f6f6;
+}
+/* main 영역 margin, padding 설정 */
+#main_wrap>div {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 1000px;
+    
+}
+
+#logo_area {
+    float: left;
+    width: 500px;
+}
+
+.fb_logo {
+    padding-top: 122px;
+    padding-bottom: 0;
+    width: 300px;
+}
+
+#logo_area>h2 {
+    font-size: 30px;
+    padding-left: 28px;
+    padding-bottom: 20px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+#login_area_out {
+    margin-top: 100px;
+    width: 396px;
+    height: 500px;
+    float: right;
+}
+
+#login_area_in {
+    width: 396px;
+    height: 350px;
+    background-color: white;
+    box-shadow: 2px 2px 2px #ddd;
+    border-radius: 10px;
+}
+
+#login_area_in>input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #ccc;
+    padding: 14px 16px;
+    height: 22px;
+    width: 329px;
+}
+
+#login_area_in>button {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.id {
+    margin: 30px 8px 10px 15px;
+}
+
+.password {
+    margin: 15px;
+    margin-top: 0px;
+}
+
+.login_btn {
+    height: 48px;
+    width: 364px;
+    margin-left: 15px;
+
+    color: white;
+    background-color: #1877f2;
+    border: 1px solid #1877f2;
+    border-radius: 7px;
+}
+
+#login_area_in>a {
+    display: block;
+    padding: 16px 10px;
+    text-align: center;
+    color : #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
+    border-bottom: 1px solid #ddd;
+}
+
+#login_area_in>a:hover {
+    text-decoration: underline;
+}
+
+.create_btn {
+    height: 48px;
+    width: 145px;
+
+    background-color: #42B72A;
+    border: 1px solid #42b72a;
+    border-radius: 5px;
+    color: white;
+
+    margin: 15px 127.5px;
+}
+.ad {
+    text-align: center;
+    margin: 15px 20px;
+    font-size: 13px;
+}
+.ad>span {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+hr {
+
+    margin : 5px;
+    
+}
+
+footer{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+footer ul {
+    height: 50px;
+    margin-top: 5px;
+    padding: 10px 10px 15px 15px;
+}
+
+footer li {
+    line-height: 30px;
+}
+
+footer button {
+    height: 30px;
+    width: 30px;
+    margin-left: 30px;
+    margin-top: - 10px;
+    font-size: 20px;
+}
+
+.fb {
+    margin-top: 15px;
+    padding: 10px 36px;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    color: #666;
+}
