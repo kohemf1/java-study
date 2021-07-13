@@ -44,6 +44,7 @@ form label {
 #regForm>table td {
     width : 200px;
     padding : 5px;
+    font-family: 'Sunflower', sans-serif;
 }
 
 #regForm input[type=text], #regForm input[type=password] {
@@ -107,7 +108,8 @@ div.msg {
     padding: 20px;
 
     position: absolute;
-    left:50%;
+    left:80%;
+    /* left:50%; */
     top:100px;
     margin-left: -175px;
 

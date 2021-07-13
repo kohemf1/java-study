@@ -7,17 +7,7 @@
     <title>Dom</title>
     <style>
 
-        div>img {
-            width : 250px;
-            height : 200px;
-        }
-
-        #banner {
-            width : 250px;
-            border : 10px solid #aaa ;
-            height : 200px;
-            /* overflow : hidden; */
-        }
+     
 
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js" 
@@ -60,9 +50,7 @@
             $('div').append(function(index){
                 return '<h3><a href="'+links[index]+'">'+links[index].name+'</a></h3>';
             });
-            setInterval(function(){
-                $('#banner>img').first().appendTo('#banner');
-            }, 3000);
+       
             
 
 
@@ -71,12 +59,7 @@
 </head>
 <body>
     
-    <div id="banner">
-        <img src="../mini1.jpg">
-        <img src="../mini2.jpg">
-        <img src="../images/sbuk.jpg">
-        <img src="../images/ssg.jpg">
-    </div>
+    
 
 </body>
 </html>
