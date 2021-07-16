@@ -8,7 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myblog</title>
-    <link rel="stylesheet" href="css/210702myblog.css">
+    
+    <!-- http://localhost:8080/First-Web/blog/css/210702myblog.css -->
+    
+    <link rel="stylesheet" href="/First-Web/blog/css/210702myblog.css">
 </head>
 <body>
 
