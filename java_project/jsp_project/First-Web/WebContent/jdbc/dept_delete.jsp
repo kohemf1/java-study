@@ -1,3 +1,6 @@
+<%@page import="jdbc.util.JdbcUtil"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="dept.dao.DeptDao"%>
 <%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -16,21 +19,26 @@
 	// 2. DB 처리 : insert
 	
 	// 데이터베이스 드라이버 로드
-	Class.forName("com.mysql.cj.jdbc.Driver");
+	
 	
 	Connection conn = null;
-	PreparedStatement pstmt = null;
+	DeptDao dao = DeptDao.getInstance();
 	
-	conn = ConnectionProvider.getConnection();
 	
-	String sqlDelete = " delete from dept where deptno = ?";
-	pstmt = conn.prepareStatement(sqlDelete);
-	pstmt.setInt(1, Integer.parseInt(deptno));
+	try{
+		conn = ConnectionProvider.getConnection();
 	
-	resultCnt = pstmt.executeUpdate();
+		resultCnt = dao.deleteDept(conn, Integer.parseInt(deptno));
+	
+	} catch (SQLException e){
+		e.printStackTrace();
+	} catch (Exception e){
+		e.printStackTrace();
+	} finally{
+		JdbcUtil.close(conn);
+	}
 	
 	// 실행 결과에 맞는 응답
-	
 	if(resultCnt>0){
 		%>	
 		<script>
