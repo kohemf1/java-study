@@ -1,4 +1,4 @@
-drop table if exists project.member;
+drop table if exists project.member1;
 
 create table project.member1 (
 	idx int auto_increment,
@@ -12,9 +12,9 @@ create table project.member1 (
 );
 
 -- Select
-select * from project.member;
-select * from project.member where idx=1;
-
+select * from project.member1;
+select * from project.member1 where idx=1;
+select * from project.member1 where memberid='cool' and passwmember1ord = '1111';
 
 -- insert
 INSERT INTO project.member1
@@ -23,11 +23,13 @@ VALUES
 ('cool', '1111', 'COOL');
 
 -- update
-update project.member
+update project.member1
 set
 password='0000', membername='tester'
 where idx=1
 ;
 
 -- Delete
-delete from project.member where idx=1;
+delete from project.member1 where idx=1;
+
+commit;

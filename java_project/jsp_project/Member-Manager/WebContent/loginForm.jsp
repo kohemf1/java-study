@@ -12,6 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel ="stylesheet" href="<%=request.getContextPath()%>/css/default.css">
 <style>
 </style>
 <script>
@@ -19,34 +20,39 @@
 </head>
 <body>
 
+	<%@ include file = "/WEB-INF/frame/header.jsp"%>
+	
+	<%@ include file = "/WEB-INF/frame/nav.jsp"%>
+
 	<div class="contents">
 	
 		<h2>Login</h2>
 		<hr>
 		<form action = "login.jsp" method="post">
-			<tr>
-				<th>ID</th>
-				<th><input type="text" name="memberid" value=<%=reid %>></th>
-			<tr>
-			<tr>
-				<th>PW</th>
-				<th><input type="password" name="password"></th>
-			<tr>
-			<tr>
-				<th></th>
-				<th><input type="checkbox" name="reid" value="on" <%= checked %>>
-				아이디 기억하기
-				</th>
-			<tr>
-			<tr>
-				<th></th>
-				<th><input type="submit"></th>
-			<tr>
+			<table>
+				<tr>
+					<th>ID</th>
+					<td><input type="text" name="memberid" value="<%=reid%>"></td>
+				<tr>
+				<tr>
+					<th>PW</th>
+					<td><input type="password" name="password"></td>
+				<tr>
+				<tr>
+					<th></th>
+					<td><input type="checkbox" name="reid" value="on" 
+							<%=checked%>>아이디 기억하기
+					</td>
+				<tr>
+				<tr>
+					<th></th>
+					<td><input type="submit"></td>
+				<tr>
 				
-		</table>
+			</table>
 		
 		</form>
-		<table>
+	</div>
 
 </body>
 </html>
