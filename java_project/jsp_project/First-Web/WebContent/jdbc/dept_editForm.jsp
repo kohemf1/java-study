@@ -1,3 +1,5 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="dept.dao.DeptDao"%>
 <%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="dept.domain.Dept"%>
 <%@page import="java.sql.DriverManager"%>
@@ -9,38 +11,25 @@
     pageEncoding="UTF-8"%>
 <%	
 	//사용자가 전달하는 부서번호 받기  
-	// 전달받은 부서번호로 부서정보를 가져온다 
+	// 전달받은 부서번호로 부서정보를 가져온다 -> 처리 -> Dept -> 공유 
 	String deptno = request.getParameter("deptno");
 
 	//out.println(deptno);
 	// 1. 드라이버 로드
-	Class.forName("com.mysql.cj.jdbc.Driver");
 	// 2. DB 연결
 	Connection conn = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
+	DeptDao dao = null;
 	
-	conn = ConnectionProvider.getConnection();
-	
-	Dept dept = null;
-	
-	String sqlSelect = "select * from dept where deptno=?";
-	pstmt = conn.prepareStatement(sqlSelect);
-	pstmt.setInt(1, Integer.parseInt(deptno));
-	
-	rs = pstmt.executeQuery();
-	
-	if(rs.next()){
-		dept = new Dept();
-		dept.setDeptno(rs.getInt("deptno"));
-		dept.setDname(rs.getString("dname"));
-		dept.setLoc(rs.getString("loc"));
+	try{
+		conn = ConnectionProvider.getConnection();
+		dao = DeptDao.getInstance();
+		
+		// 부서정보를 form_view.jsp 전달(공유)
+		request.setAttribute("dept", dao.selectByDeptno(conn, Integer.parseInt(deptno)));
+	} catch (SQLException e){
+		e.printStackTrace();
 	}
-	
-	//out.println(dept);
-	
-	// 부서정보를 form_view.jsp 전달(공유)
-	request.setAttribute("dept", dept);
+
 %>
 <jsp:forward page="form_view.jsp"/>
 
