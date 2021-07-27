@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	session.setAttribute("userName", "손흥민");
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +11,11 @@
 </script>
 </head>
 <body>
-
-	<h1>세션에 사용자 이름을 저장했습니다.<%= session.getAttribute("userName") %>/${userName}</h1>
-	<h3><a href="sessionView.jsp">세션의 속성 정보 확인</a></h3>
+	<h3>메시지를 삭제할려면 비밀번호를 입력하세요</h3>
+	<form action = "messageDelete.jsp" method="post">
+		비밀번호 <input type="password" name="password"> 
+		<input type="hidden" name="mid" value="${param.mid}"><br>
+		<input type="submit" value="삭제">
+	</form>
 </body>
 </html>
