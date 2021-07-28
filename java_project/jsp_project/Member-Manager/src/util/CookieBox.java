@@ -13,7 +13,7 @@ public class CookieBox {
 	
 	// request 객체를 이용해서 모든 Cookie 객체를 Map에 저장
 	// Map<k,v> -> (쿠키이름,쿠키객체)
-	Map<String, Cookie> cookieMap = new HashMap<String, Cookie>();
+	private Map<String, Cookie> cookieMap = new HashMap<String, Cookie>();
 	
 	// 생성자를 이용해서 Map에 저장할 데이터 초기화
 	public CookieBox(HttpServletRequest request) {
@@ -67,7 +67,7 @@ public class CookieBox {
 	public static Cookie makeCookie(String name, String value, 
 			String path, int maxAge) throws UnsupportedEncodingException {
 		Cookie c = new Cookie(name,URLEncoder.encode(value, "utf-8"));
-		c.setPath(path);//    /
+		c.setPath(path);//    
 		c.setMaxAge(maxAge);
 		return c;
 	}	

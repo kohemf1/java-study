@@ -2,8 +2,9 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%
-	List<Member> list = (List<Member>) request.getAttribute("result");
+	//List<Member> list = (List<Member>) request.getAttribute("result");
 %>
 <!DOCTYPE html>
 <html>
@@ -20,12 +21,15 @@
 		margin: 5px 0;
 	}
 </style>
+<link rel = "stylesheet" href='<c:url value='/css/default.css'/>'>
 <script>
 </script>
 </head>
 <body>
 	
-	<h1>부서 리스트</h1>
+	<%@ include file= "/WEB-INF/frame/header.jsp" %>
+	<%@ include file= "/WEB-INF/frame/nav.jsp" %>
+	<h1>회원 리스트</h1>
 	<hr>
 	
 	<!-- <button onclick="location.href='dept_regForm.jsp';">부서정보 등록</button> -->
@@ -40,25 +44,32 @@
 			<th>관리</th>
 		</tr>
 		
-	<%
+	<%--
 		if(list!=null && !list.isEmpty()){
 			for(int i=0; i<list.size(); i++){
-				%>
+				--%>
+				
+		<c:if test="${result ne null and not empty result }">
+		<c:forEach items="${result}" var="member">		
 		<tr>
-			<td><%= list.get(i).getIdx() %></td>			
-			<td><%= list.get(i).getMemberid() %></td>
-			<td><%= list.get(i).getPassword() %></td>
-			<td><%= list.get(i).getMembername() %></td>
-			<td><%= list.get(i).getRegdate() %></td>
+			<td>${member.idx }</td>			
+			<td>
+				<img src="<c:url value="/upload/${member.memberphoto}"/>" height = "30">
+			${member.memberid }</td>
+			<td>${memeber.password }</td>
+			<td>${member.membername }</td>
+			<td>${memeber.regdate }</td>
 			<td>
 				<a href="#">수정</a> 
 				<a href="#">삭제</a>
 			</td>
 		</tr>
-				<%
+		</c:forEach>
+		</c:if>
+				<%--
 			}
 		}
-	%>
+	--%>
 		
 		
 	</table>
@@ -77,13 +88,6 @@
 	<%--
 		out.println(list);
 	--%>
-
-
-
-
-
-
-
 
 
 
