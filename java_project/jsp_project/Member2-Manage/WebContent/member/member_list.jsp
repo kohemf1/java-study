@@ -1,6 +1,6 @@
+<%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="jdbc.util.JdbcUtil"%>
 <%@page import="java.sql.SQLException"%>
-<%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="member.dao.MemberDao"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
