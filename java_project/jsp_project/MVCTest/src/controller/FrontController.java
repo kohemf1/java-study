@@ -2,15 +2,42 @@ package controller;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.Command;
+import service.DateCommandImpl;
+import service.DateService;
+import service.GreetingCommandImpl;
+import service.GreetingService;
+import service.InvalidCommandImpl;
+import service.InvalidService;
+
 public class FrontController extends HttpServlet{
 
+	private Map<String, Command> commands = new HashMap<String, Command>();
+	//		     요청(uri), GreetingCommandImpl()
+	// commands.put("/", new GreetingCommandImpl())
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		
+		// commands에  요청 문자열과 처리할 객체를 저장
+		
+		commands.put("/", new GreetingCommandImpl());   //  /에 대한 요청
+		commands.put("/greeting", new GreetingCommandImpl());
+		commands.put("/date", new DateCommandImpl());
+		
+		
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -24,6 +51,9 @@ public class FrontController extends HttpServlet{
 		doProcess(request, response);
 	}
 
+	
+	
+	
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {	
 		
@@ -34,24 +64,58 @@ public class FrontController extends HttpServlet{
 			commandUri = commandUri.substring(request.getContextPath().length());
 		}
 		// 결과 Data 
-		Object resultObj = null;
+		//Object resultObj = null;
 		// view 페이지
-		String viewPage = "/WEB-INF/views/default.jsp";
 		
-		// 2. 요청을 처리 : 모델 선택 실행 -> 요청을 처리 할 수 있는 Service선택
-		if(commandUri.equals("/greeting.do")) {
-			// 처리할 수 있는 서비스의 메소드 실행
-			resultObj = "안녕하세요";
-			viewPage = "/WEB-INF/views/greeting.jsp";
-		} else if(commandUri.equals("/date.do")){
-			resultObj = new Date();
-			viewPage = "/WEB-INF/views/date.jsp";
-		} else {
-			resultObj = "Invalid Request";
+		String viewPage = "/WEB-INF/views/default.jsp";
+		Command command = null;
+		
+		command = commands.get(commandUri);
+		if(command == null) {
+			command = new InvalidCommandImpl();
 		}
 		
+		viewPage = command.getPage(request);
+		
+	/*	if(commandUri.equals("/greeting.do")) {
+			command = new GreetingCommandImpl();
+		
+		} else if(commandUri.equals("/date.do")) {
+			command = new DateCommandImpl();
+			
+		} else if(commandUri.equals("/")) {
+			command = new DateCommandImpl();
+			
+		} else {
+			command = new InvalidCommandImpl();
+		}*/
+		
+		
+		
+		
+		
+		// 2. 요청을 처리 : 모델 선택 실행 -> 요청을 처리 할 수 있는 Service선택
+		/*if(commandUri.equals("/greeting.do")) {
+			// 처리할 수 있는 서비스의 메소드 실행
+			//resultObj = "안녕하세요";
+			//viewPage = "/WEB-INF/views/greeting.jsp";
+			GreetingService service = new GreetingService();
+			viewPage = service.greeting(request);
+			
+		} else if(commandUri.equals("/date.do")){
+			//resultObj = new Date();
+			//viewPage = "/WEB-INF/views/date.jsp";
+			DateService service = new DateService();
+			viewPage = service.getDate(request);
+			
+		} else {
+			//resultObj = "Invalid Request";
+			InvalidService service = new InvalidService();
+			viewPage = service.getPage(request);
+		}*/
+		
 		// 3. 결과 데이터를 공유(전달)
-		request.setAttribute("result", resultObj);
+		//request.setAttribute("result", resultObj);
 		
 		// 4. viewPage로 포워딩 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
