@@ -44,7 +44,7 @@ public class SimpleController extends HttpServlet{
 			resultObj = new Date();
 			viewPage = "/WEB-INF/views/date.jsp";
 		} else {
-			resultObj = "Invalid Request";
+			resultObj = "Invalid Type Request";
 		}
 		
 		// 3. 결과 데이터를 공유(전달)

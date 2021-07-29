@@ -3,7 +3,6 @@ package controller;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -17,12 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import service.Command;
-import service.DateCommandImpl;
-import service.DateService;
-import service.GreetingCommandImpl;
-import service.GreetingService;
 import service.InvalidCommandImpl;
-import service.InvalidService;
+
 
 public class FrontController extends HttpServlet{
 
@@ -42,8 +37,7 @@ public class FrontController extends HttpServlet{
 		FileInputStream fis = null;
 		// 설정 파일의 시스템 경로 
 		String configPath = config.getServletContext().getRealPath(configFile);
-		
-		System.out.println(configPath);
+			
 		
 		try {
 			fis = new FileInputStream(configPath);
@@ -58,15 +52,12 @@ public class FrontController extends HttpServlet{
 		
 		while(itr.hasNext()) {
 			String command = (String) itr.next();
-			String commandClassName = prop.getProperty(command);
-		
-			
+			String commandClassName = prop.getProperty(command);		
 			// 클래스 이름으로 해당 클래스의 인스턴스 생성
 			try {
 				Class commandClass = Class.forName(commandClassName);			
 				Command commandObj = (Command)commandClass.newInstance();
 				commands.put(command, commandObj);	
-				System.out.println(command+" = "+commandClassName );
 				
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
@@ -116,16 +107,6 @@ public class FrontController extends HttpServlet{
 		}
 		
 		viewPage = command.getPage(request);
-		
-	
-			
-		
-		// 2. 요청을 처리 : 모델 선택 실행 -> 요청을 처리 할 수 있는 Service선택
-	
-		
-		// 3. 결과 데이터를 공유(전달)
-		//request.setAttribute("result", resultObj);
-		
 		// 4. viewPage로 포워딩 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
