@@ -11,7 +11,7 @@ public class InvalidCommandImpl implements Command {
 		// 핵심처리
 	
 		
-		return "/WEB-INF/views/default";
+		return "/WEB-INF/views/default.jsp";
 	}
 
 }
