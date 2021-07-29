@@ -15,7 +15,7 @@ create table project.member1 (
 select * from project.member1;
 select * from project.member1 where idx=1;
 select * from project.member1 where memberid='cool' and passwmember1ord = '1111';
-
+select count(*) from project.member1 where memberid='cool';
 -- insert
 INSERT INTO project.member1
 (memberid, password, membername)
