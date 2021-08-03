@@ -11,6 +11,10 @@ public class MemberRegService {
 	//Dao dao = new MemberDao();  
 	Dao dao ;
 	
+	public void setDao(Dao dao) {
+		this.dao = dao;
+	}
+	
 	public MemberRegService(Dao dao) {
 		this.dao = dao;
 		System.out.println("MemberRegService 인스턴스 생성");
