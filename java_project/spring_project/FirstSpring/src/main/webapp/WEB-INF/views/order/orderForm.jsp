@@ -53,7 +53,19 @@
 				<td>주의</td>
 				<td><input type="text" name="orderItems[2].remark"> </td>
 			</tr>
-			
+			<tr>
+				<td rowspan="3">상품-4</td>
+				<td>ID</td>
+				<td><input type="text" name="orderItems[3].itemId"> </td>
+			</tr>
+			<tr>
+				<td>수량</td>
+				<td><input type="number" name="orderItems[3].number"> </td>
+			</tr>
+			<tr>
+				<td>주의</td>
+				<td><input type="text" name="orderItems[3].remark"> </td>
+			</tr>
 			<tr>
 				<td rowspan="3">주소</td>
 				<td>우편번호</td>
