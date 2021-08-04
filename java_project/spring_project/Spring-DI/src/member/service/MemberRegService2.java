@@ -11,22 +11,23 @@ import member.dao.Dao;
 import member.domain.Member;
 import member.domain.RegRequest;
 
-public class MemberRegService2 {
 
+public class MemberRegService2 {
 	
-	//@Autowired 
+	//@Autowired
 	//@Qualifier("member1")
 	@Resource(name = "guestDao")
 	private Dao dao ;
 	
 	public void regMember(RegRequest request) throws Exception {
 		
-		// 중복 이메일 체크          
+		// 중복 이메일 체크
 		Member member = dao.selectByEmail(request.getEmail());
 		
 		if(member != null) {
-			throw new Exception("중복 이메일 !!!!!!");
+			throw new Exception("중복 이메일 !!");
 		}
+		
 		
 		Member newMember = new Member(
 				0, 
@@ -36,9 +37,6 @@ public class MemberRegService2 {
 				new Date());
 		
 		dao.insert(newMember);
-		
 	}
-	
-	
-	
+
 }

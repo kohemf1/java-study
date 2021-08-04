@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,27 +12,30 @@
 </script>
 </head>
 <body>
-	
+
 	<h1>LoginForm</h1>
-	<hr> 				<!-- /web/member1/login.jsp -->
-	<form action="<c:url value="/member1/login.jsp"/>"> <!-- /web/member1/mypage/mypage.jsp -->
+	<hr>                   <!-- /web/member/login.jsp -->
+	<form method="post">
+		<!--  action="/contextPath/member/login" -->
+	  <!-- /web/member/mypage/mypage.jsp -->
 		<table>
 			<tr>
 				<td>아이디</td>
 				<td> <input type="text" name="id">
-			</tr>	
+			</tr>
 			<tr>
 				<td>비밀번호</td>
 				<td> <input type="password" name="pw">
-			</tr>	
+			</tr>
 			<tr>
 				<td></td>
 				<td> <input type="submit" >
-			</tr>	
+			</tr>
+			
 		</table>
-		
+	
 	</form>
 	
-	
+
 </body>
 </html>

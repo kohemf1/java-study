@@ -7,14 +7,20 @@
 	<!-- MemberDao bean 등록 -->
 	<bean id="memberDao" class="member.dao.MemberDao"></bean>
 
-	<!-- MemberRegService beam 등록  -->
+	<!-- MemberRegService bean 등록 -->
 	<bean id="regService" class="member.service.MemberRegService" scope="prototype">
+		<constructor-arg ref="memberDao" />
+	</bean>
+	
+	<bean id="changePwService" class="member.service.ChangePasswordService" scope="singleton">
 		<constructor-arg ref="memberDao"/>
 	</bean>
 
-	<bean id="changePwService" class="member.service.ChangePasswordService" scope="singleton">
-		<constructor-arg ref="memberDao"/> 
-		
-	</bean>
-
 </beans>
+
+
+
+
+
+
+

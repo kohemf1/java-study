@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +12,9 @@
 </script>
 </head>
 <body>
-	
+
 	<h1>회원가입</h1>
-	<hr> 				<!-- /web/member1/login.jsp -->
+	<hr>                   
 	<form action="memberReg.jsp" method="post" enctype="multipart/form-data"> 
 			<table>
 				<tr>
@@ -45,7 +45,7 @@
 					</td>
 				</tr>
 			</table>
-		</form>	
-	
+		</form>
+
 </body>
 </html>

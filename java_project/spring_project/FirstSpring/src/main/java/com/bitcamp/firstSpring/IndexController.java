@@ -8,7 +8,7 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "index"; // /WEB-INF/views/index.jsp
+		return "index";   // /WEB_INF/views/index.jsp
 	}
 	
 }

@@ -1,7 +1,6 @@
 package member.dao;
 
 import java.util.Collection;
-import java.util.List;
 
 import member.domain.Member;
 
@@ -18,4 +17,8 @@ public interface Dao {
 	
 	// 전체 데이터 출력
 	Collection<Member> selectAll();
+	
+	
+	
+	
 }
