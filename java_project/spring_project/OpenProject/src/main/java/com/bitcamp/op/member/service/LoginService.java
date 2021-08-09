@@ -68,11 +68,7 @@ public class LoginService {
 		}
 		
 		
-		
-		
-		
-		
-		
+
 		return loginChk;
 	}
 	

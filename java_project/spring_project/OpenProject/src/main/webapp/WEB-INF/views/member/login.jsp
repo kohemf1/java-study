@@ -10,8 +10,6 @@
 </c:if>
 
 <c:if test="${loginChk}">
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +24,10 @@
 		<!-- <h1>content : login </h1> -->		
 		<h2>Login</h2>
 		<hr>
-		<h2>${loginInfo }</h2>
+		<h2>${loginInfo}</h2>
 	</div>
 
 	
 </body>
 </html>
-
 </c:if>
