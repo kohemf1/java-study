@@ -7,24 +7,25 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class Member {
 	
+
 	private int idx;
 	private String memberid;
 	private String password;
 	private String membername;
 	private String memberphoto;
 	private Timestamp regdate;
-	
-	
-	public Member(int idx, String memberid, String password, String username, String memberphoto, Timestamp regdate) {
+
+	public Member(int idx, String memberid, String password, String membername, String memberphoto, Timestamp regdate) {
 		this.idx = idx;
 		this.memberid = memberid;
 		this.password = password;
-		this.membername = username;
+		this.membername = membername;
 		this.memberphoto = memberphoto;
 		this.regdate = regdate;
 	}
-	
-	public Member() {}
+
+	public Member() {
+	}
 
 	public int getIdx() {
 		return idx;
@@ -65,7 +66,7 @@ public class Member {
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
-	
+
 	public String getMemberphoto() {
 		return memberphoto;
 	}
@@ -79,6 +80,8 @@ public class Member {
 		return new Date(getRegdate().getTime());
 	}
 
+	
+
 	@Override
 	public String toString() {
 		return "Member [idx=" + idx + ", memberid=" + memberid + ", password=" + password + ", membername=" + membername
@@ -86,7 +89,7 @@ public class Member {
 	}
 
 	// Member -> LoginInfo
-	public LoginInfo toLoginInfo () {
+	public LoginInfo toLoginInfo() {
 		return new LoginInfo(this.idx, this.memberid, this.membername, this.memberphoto);
 	}
 	
