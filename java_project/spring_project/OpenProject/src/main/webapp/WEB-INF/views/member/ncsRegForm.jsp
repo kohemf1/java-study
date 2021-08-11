@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<script>
+/*현재 url  */
+document.writeln(location.href);
+</script>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -15,10 +19,10 @@
 	<div id="content">
 		<!-- <h1>content : login </h1> -->
 		<!-- ncs -->
-			<h2>회원가입</h2>
+			<h2>회원가입</h2>		
 		<hr>
 		<form method="post" enctype="multipart/form-data">
-			
+
 		<table>
 				<tr>
 					<td>아이디</td>
