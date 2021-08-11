@@ -15,6 +15,7 @@ public class IdCheckController {
 	@Autowired
 	private idCheckService checkService;
 	
+	
 	@RequestMapping(value="/member/idCheck", method = RequestMethod.POST)
 	public String idCheck(
 			@RequestParam("mid") String uid,

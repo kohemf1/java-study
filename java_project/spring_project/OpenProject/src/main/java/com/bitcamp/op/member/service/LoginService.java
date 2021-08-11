@@ -11,15 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bitcamp.op.jdbc.ConnectionProvider;
+import com.bitcamp.op.member.dao.JdbcTemplateMemberDao;
 import com.bitcamp.op.member.dao.MemberDao;
 import com.bitcamp.op.member.domain.Member;
 
 @Service
 public class LoginService {
 
-	@Autowired
-	MemberDao dao;
+	//@Autowired
+	//MemberDao dao;
 	
+	@Autowired
+	private JdbcTemplateMemberDao dao;
 	
 	public boolean login(
 			String id, 
@@ -32,24 +35,16 @@ public class LoginService {
 		
 		Connection conn = null;
 		
-		try {
-			conn = ConnectionProvider.getConnection();
-			
-			
-			// 전달받은 id 와 pw 로 DB에서 검색한다.=> 
-			// 있다면 로그인 처리 true, 없다면 false처리 리턴		
-			Member member = dao.selectByIdPw(conn, id, pw);
-			
-			if(member != null) {
-				// 로그인 처리
-				session.setAttribute("loginInfo", member.toLoginInfo());
+		// 전달받은 id 와 pw 로 DB에서 검색한다.=> 
+		// 있다면 로그인 처리 true, 없다면 false처리 리턴		
+		Member member = dao.selectByIdPw(id, pw);
+		
+		if(member != null) {
+			// 로그인 처리
+			session.setAttribute("loginInfo", member.toLoginInfo());
 
-				loginChk = true;
-				
-			}
+			loginChk = true;
 			
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
 
 		// 아이디 저장을 위한 Cookie 설정
