@@ -21,11 +21,57 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) from member1 where memberid=#{mid}
 	</select>
 	
+	<insert	id="insertMember"
+			parameterType="com.bitcamp.op.member.domain.Member"
+			useGeneratedKeys="true"
+			keyProperty="idx"
+	>
+		insert into member1 (memberid, password, membername, memberphoto)
+		value (#{memberid}, #{password}, #{membername}, #{memberphoto})
 	
+	</insert>
 	
+	<update id="updateMember"
+			parameterType="com.bitcamp.op.member.domain.Member"
+	>
 	
+		update member1 
+		set membername = #{membername}, password = #{password}
+		where idx = ${idx}
 	
+	</update>
 	
+	<delete	id="deleteMember">
+		delete from member1 where idx = #{idx}
+	</delete>
 	
+	<!-- 전체 회원 리스트 -->
+	<select id="selectAll"
+			resultType="com.bitcamp.op.member.domain.Member"
+	>
+		select * from member1 order by memberid
+	</select>
+	
+	<!-- 페이징 처리가 가능한 회원 리스트 -->
+	<select id="selectList"
+			resultType="com.bitcamp.op.member.domain.Member"
+	>
+		select * from member1 order by memberid limit #{param1}, #{param2}
+	</select>
+
+	<select	id="selectTotalCount"
+			resultType="int"
+	>
+		select count(*) from member1
+	</select>
+
+
+
+
+
+
+
+
+
 	
 </mapper>
