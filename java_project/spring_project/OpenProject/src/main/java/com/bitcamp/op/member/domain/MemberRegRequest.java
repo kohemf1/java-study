@@ -8,49 +8,49 @@ public class MemberRegRequest {
 	private String password;
 	private String membername;
 	private MultipartFile photo;
-	
+
 	public String getMemberid() {
 		return memberid;
 	}
-	
+
 	public void setMemberid(String memberid) {
 		this.memberid = memberid;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String getMembername() {
 		return membername;
 	}
-	
+
 	public void setMembername(String membername) {
 		this.membername = membername;
 	}
-	
+
 	public MultipartFile getPhoto() {
 		return photo;
 	}
-	
+
 	public void setPhoto(MultipartFile photo) {
 		this.photo = photo;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "MemberRegRequest [memberid=" + memberid + ", password=" + password + ", membername=" + membername
-				+ ", photo=" + photo.getOriginalFilename() + "]";
+				+ ", photo=" + photo + "]";
 	}
 	
-	// MemberRegRequest 를-> Member 객체로 바꾸기 (서비스에서 dao로 전달하기 위해)
+	// MemberRegRequest -> Member
 	public Member toMember() {
 		return new Member(
-				0,
+				0, 
 				memberid, 
 				password, 
 				membername, 
@@ -59,4 +59,11 @@ public class MemberRegRequest {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+
 }
