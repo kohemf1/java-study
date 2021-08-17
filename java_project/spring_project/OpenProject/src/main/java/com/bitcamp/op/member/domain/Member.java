@@ -5,14 +5,21 @@ import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+
 public class Member {
 	
 
 	private int idx;
 	private String memberid;
+	@JsonIgnore
 	private String password;
 	private String membername;
 	private String memberphoto;
+	//@JsonFormat(shape = Shape.STRING)
+	@JsonFormat(pattern = "yyyy. MM. dd. HH:mm:ss")
 	private Timestamp regdate;
 
 	public Member(int idx, String memberid, String password, String membername, String memberphoto, Timestamp regdate) {
