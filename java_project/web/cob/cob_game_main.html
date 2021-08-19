@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Come on, Board</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+    header {
+        position: relative;
+        z-index: 20;
+        min-width: 980px;
+        width: 100%;
+        height: 140px;
+        background-color: rgb(66, 133, 244);
+        text-align: center;
+    }
+    .MultiBar {
+        display: inline-block;
+        height: 30px;
+        width: 100%;
+        max-width: 1280px;
+        padding: 12px 0px 5px;
+    } 
+
+    .area_gnb {
+        font-size: 12px;
+        width: 500px;
+        height: 30px;
+        float: right;
+        color: white;
+    }
+
+    .area_gnb>li {
+        float: right;
+        width: 75px;
+    }
+
+    .container {
+        display: inline-block;
+        height: 93px;
+        width: 100%;
+        max-width: 1280px;
+        position: relative;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        width: 180px;
+        margin-left: -90px;
+    }
+
+
+    .main_naviwrap {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1280px;
+        height: 80px;
+        margin-top: -98px;
+        padding-bottom: 10px;
+    }
+    .main_nav {
+        padding-top: 45px;
+    }
+    .main_nav>.left_ul {
+        float: left;
+        overflow: hidden;
+    }
+    .main_nav>.right_ul {
+        float: right;
+        overflow: hidden;
+    }
+
+    .main_nav>ul>li {
+        color: white;
+        width: 85px;
+        float: left;
+    }
+
+    .searchbar{
+        
+        height: 50px;
+        width: 100%;
+        max-width: 980px;
+        padding: 12px  5px;
+        color: white;
+        background-color: rgb(251, 188, 006);
+        margin: 30px auto;
+        border: 2px solid #000;
+ 
+    }
+    .searchbar>h1 {
+        float:left;
+        padding: auto 20px;
+        margin: 0px 10px;
+    }
+    .search{
+
+        float : right;
+        margin-top: 8px;
+        margin-right: 20px;
+        padding: auto 0px;
+        /* border: 1px solid black; */
+    }
+
+    .search>input[type=text]{
+
+        height: 30px;
+        width: 250px;
+    }
+
+    .search>input[type=submit]{
+
+        height: 34px;
+        width: 50px;
+        float: right;
+    }
+    .listbar{
+        
+        height: 20px;
+        width: 100%;
+        max-width: 980px;
+        padding: 12px 5px;
+        color: white;
+        background-color:rgb(251, 188, 006);
+        margin: 30px auto;
+        border: 2px solid #000;
+       
+ 
+    }
+    
+    .listbar>select{
+
+        width: 80px;
+        float: left; 
+        display: inline;
+    }
+
+    .listbarv>ul{
+        
+        display: inline;
+
+    }
+    .listbar>ul>li{
+        float: right; 
+        
+        margin-right: 10px;
+    }
+
+    .gamemain{
+        
+        width: 100%;
+        max-width: 980px;
+        height: auto;
+        margin: 15px auto;
+        padding: 12px 5px;
+        min-height: 150px;
+        
+        border: 2px solid #000;
+    }
+   
+    .gamemain>dvi{
+
+    }
+
+    .gameimg{
+        
+        width: 100px;
+        height: 100px;
+        /* border : 2px solid #000; */
+        padding: 5px 15px;
+        margin : 5px 10px; 
+        border-right: 2px solid rgb(251, 188, 006);
+        float:left; 
+        
+    }
+    
+    .gamemain>div>ul{
+        float : left; 
+    }
+
+    .gamemain>div>div{
+
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        text-align: center;
+        line-height: 100px;
+        font-size: 20px;
+        float: right ;
+        margin: 5px 15px;
+    }
+
+.block1{
+    display: block;
+    clear: both;
+    border-bottom: 2px solid #000;
+
+    height: 150px;
+}
+
+.box1{
+    height: 200px;
+    width: 200px;
+    background-color: teal;
+}
+.box1 :hover{
+    background-color: yellow;
+}
+.box2 :hover{
+    background-color: yellowgreen;
+}
+
+</style>
+
+<body>
+    <header>
+        <div class="MultiBar">
+            <ul class="area_gnb">
+                <li>시작페이지로</li>
+                <li>다크모드</li>
+                <li>마이페이지</li>
+                <li>로그인</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <img src="cob_white.png" class="logo">
+        </div>
+        <div class="main_naviwrap">
+            <div class="main_nav">
+                <ul class="left_ul">
+                    <li>회사소개</li>
+                    <li>회사소개</li>
+                    <li>회사소개</li>    
+                </ul>
+            </div>
+        </div>
+
+        <div class="main_naviwrap">
+            <div class="main_nav">
+                <ul class="right_ul">
+                    <li>모임</li>
+                    <li>게시판</li>
+                    <li>카페</li>
+                    <li>게임</li>    
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="searchbar">
+        <h1><a>게임 DB</a></h1>
+
+        <div class="search">
+            <input type="text" id="search_text">
+            <input type="submit" value="검색" id="btn1">
+        </div>
+    </div>
+
+    <div class="listbar">
+       <select>
+            <option>추리</option>
+            <option>파티</option>
+            <option>카드</option>    
+       </select>
+
+        
+        <ul>
+            <li><a href="#"> 등록순 </a> </li>
+            <li><a href="#"> 최신순 </a> </li>
+            <li><a href="#"> 평점순 </a> </li>
+        </ul>
+        
+        
+    </div>
+
+    <div class="gamemain">
+
+        
+        <div class="block1">
+            
+                <img class="gameimg" src="lol.JPG">
+            
+        
+            <ul>
+                <li><h3>게임명 : 리그오브레전드</h3></li>
+                <li><h3>장르 : AOS</h3></li>
+                <li><h3>게임인원 : 10명</h3></li>
+                <li><h3>플레이타임 : 30분</h3></li>
+                <li><h3>사용연령 : 12세</h3></li>
+            </ul>
+         
+
+            <div>
+                <h1>9.0</h1>
+            </div>
+
+
+        </div>
+
+        <div class="block1">
+            
+            <img class="gameimg" src="lol.JPG">
+        
+    
+        <ul>
+            <li><h3>게임명 : 리그오브레전드</h3></li>
+            <li><h3>장르 : AOS</h3></li>
+            <li><h3>게임인원 : 10명</h3></li>
+            <li><h3>플레이타임 : 30분</h3></li>
+            <li><h3>사용연령 : 12세</h3></li>
+        </ul>
+     
+
+        <div>
+            <h1>9.0</h1>
+        </div>
+
+
+    </div>
+        
+    </div>
+   
+    <a href="#" class="box2"> 
+    <div class="box1">
+        
+    </div>
+</a>
+</body>
+</html>
