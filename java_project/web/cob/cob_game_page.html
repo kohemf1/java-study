@@ -128,12 +128,13 @@
     }
    
     .explainbar{
-
-        background-color: lightblue;
-        border: 2px solid #000;
+        width: 100%;
+        background-color: lightgoldenrodyellow;
+        border-bottom: 2px solid #000; 
         width: 980px;
         margin: 0px auto;
         min-height: 240px;
+        padding: 0px 5px;
     }
 
     .title{
@@ -141,6 +142,7 @@
     }
 
     .explainbar>div>h2{
+        margin-top: 10px;
         display: inline-block;
         /* float: left; */
     }
@@ -172,7 +174,82 @@
         padding-top: 30px;
         font-size: 64px;
       
+    }
+    .exleft{
+        margin-left: 50px;
+        margin-top: 20px;
+        float: left;
+        font-size: 18px;
+    } 
+    .exleft>li{
+        margin-top: 20px;
+    }   
+    .excenter{
+        margin-left:80px;
+        margin-top: 20px;
+        float: left;
+        font-size: 18px;
+    }
+    .excenter>li{
+        margin-top: 20px;
     }    
+    .exright{
+        margin-left:80px;
+        margin-top: 20px;
+        float: left;
+        font-size: 18px;
+    }
+    .exright>li{
+        margin-top: 20px;
+    }    
+    
+    .gameimg{
+        float: right;
+        margin-right: 20px;
+        display: inline-block;
+    }
+    
+    .gameimg>img{
+        border-radius: 20px;
+    }
+
+    .ruleandreivew{
+        width: 100%;
+        background-color: lightgoldenrodyellow;
+        /* border: 2px solid #000; */
+        width: 980px;
+        margin: 0px auto;
+        min-height: 480px;
+        padding: 0px 5px;
+        border-bottom: 2px solid #000;
+    }
+
+    .rule{
+        padding-top: 20px;
+        padding-left: 40px;
+    }
+    .rule>hr{
+        margin-bottom: 10px;
+        width: 250px;
+        background-color: #000;
+        height: 2px;
+    }
+    .rule>textarea{
+        background-color: lightgoldenrodyellow;
+        
+    }
+    
+    .review{
+        padding-top: 20px;
+        padding-left: 40px;
+    }
+    .review>hr{
+        margin-bottom: 10px;
+        width: 250px;
+        background-color: #000;
+        height: 2px;
+    }
+    
 </style>
 
 <body>
@@ -232,7 +309,44 @@
             <h1>8.5</h1>
         </div>
 
+        <div class="explain">
+            <ul class="exleft">
+                <li>장르 : </li>
+                <li>플레이타임 : 30분 </li>
+                <li>게임난이도 : </li>
+            </ul>
+            <ul class="excenter">
+                <li>게임인원 : </li>
+                <li>사용연령 : </li>
+            </ul>
+            <ul class="exright">
+                <li>출시일 : </li>
+                <li>출판사 : </li>
+            </ul>
+        </div>
+
+        <div class="gameimg">
+            <img src="lol.JPG" alt="lol" height="160px">
+        </div>
+
    </div>
+
+   <div class="ruleandreivew">
+        <div class="rule">
+            <h1>intro&rule </h1> 
+            <hr>
+            <textarea cols="120" rows="30" ></textarea>
+    </div>
+
+    <div class="review">
+        <h1>review</h1>
+        <hr>
+
+   </div>
+
+   </div>
+
+   
        
    
 </body>
