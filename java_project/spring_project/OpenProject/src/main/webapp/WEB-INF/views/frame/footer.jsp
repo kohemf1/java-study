@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- <link rel ="stylesheet" href="/op/css/default.css">
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous"></script> -->
 	
 	<script>
 		window.jQuery
