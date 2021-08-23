@@ -231,6 +231,14 @@
     display: inline;
 }
 
+.paging{
+    width: 420px;
+    
+}
+.regbtn{
+    width: 560px;
+    float: right;
+}
 .btn2{
     float: right;
     width: 80px;
@@ -238,7 +246,10 @@
     border-radius: 7px;
 }
 
-
+a{
+    text-decoration: none;
+    color: black;
+}
 
 </style>
 
@@ -396,11 +407,15 @@
     
     <div class="pagebar">
 
-        <h4> << <a href="#">1 | </a><a href="#">2 | </a><a href="#">3 </a> >> </h4>
+        <div class="regbtn">
+            <input type="button" value="등록" class="btn2" >
+
+        <div class="paging">
+            <h4> << <a href="#">1 | </a><a href="#">2 | </a><a href="#">3 </a> >> </h4>
+        </div>
         
-        
-        <input type="button" value="등록" class="btn2" >
-        
+
+        </div>
           
     </div>
        
