@@ -136,6 +136,7 @@
         background-color: #f7f7f7;
         width: 950px;
         height: 1050px;
+        max-width: 980px;
     }
 
     .title{
@@ -263,6 +264,7 @@
         border: 3px solid white;
         background-color: #f7f7f7; 
         box-shadow: 1px 1px 3px 1px #dadce0;
+        resize: none;
     }   
     
     .reg_btn{
@@ -283,12 +285,18 @@
     }
 
     .reg_btn>input:hover{ 
-        background-color: rgb(66, 133, 244); 
+        background-color: rgb(251, 188, 006); 
         cursor: pointer;
     }
    a:hover{
     cursor: pointer;
    }
+
+   
+   a{
+        text-decoration: none;
+        color: black;
+    }
 
 </style>
 <script>
@@ -335,7 +343,7 @@
     </header>
 
     <div class="searchbar">
-        <h1><a>게임 DB</a></h1>
+        <h1><a href="cob_game_main.html">게임 DB</a></h1>
 
         <div class="search">
             <input type="text" id="search_text">

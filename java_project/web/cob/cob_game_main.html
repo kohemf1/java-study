@@ -158,7 +158,7 @@
         margin-right: 10px;
     }
 
-    .gamemain{
+    .game_list{
         
         width: 100%;
         max-width: 980px;
@@ -173,7 +173,7 @@
     
     
 
-    .gameimg{
+    .game_img{
         
         width: 100px;
         height: 100px;
@@ -185,11 +185,11 @@
         
     }
     
-    .gamemain>div>ul{
+    .game_list>div>ul{
         float : left; 
     }
 
-    .gamemain>div>div{
+    .game_list>div>div{
 
         width: 100px;
         height: 100px;
@@ -203,7 +203,7 @@
         margin-top: 5px;
     }
 
-.block1{
+.game_item{
     display: block;
     clear: both;
     border-bottom: 2px solid #000;
@@ -213,7 +213,7 @@
 }
 
 
-.pagebar{
+.paging{
     margin: 0px auto;
     width: 100%;
     max-width: 980px;
@@ -225,26 +225,31 @@
     
 }
 
-.pagebar>h4{
+.paging>h4{
     /* text-align: center; */
     margin: 0px auto;
     display: inline;
 }
 
-.paging{
+.paging_number{
     width: 420px;
     
 }
-.regbtn{
+.game_reg{
     width: 560px;
     float: right;
 }
-.btn2{
+.reg_btn{
     float: right;
     width: 80px;
     margin: 2px 0px;
     border-radius: 7px;
 }
+
+.reg_btn:hover{ 
+        background-color: rgb(251, 188, 006); 
+        cursor: pointer;
+    }
 
 a{
     text-decoration: none;
@@ -290,7 +295,7 @@ a{
     </header>
 
     <div class="searchbar">
-        <h1><a>게임 DB</a></h1>
+        <h1><a href="cob_game_main.html">게임 DB</a></h1>
 
         <div class="search">
             <input type="text" id="search_text">
@@ -315,17 +320,17 @@ a{
         
     </div>
 
-    <div class="gamemain">
+    <div class="game_list">
 
         
-        <div class="block1">
+        <div class="game_item">
             
             
-            <a href="cob_game_page.html"><img class="gameimg" src="lol.JPG"></a>
+            <a href="cob_game_page2.html"><img class="game_img" src="lol.JPG"></a>
             
             
                 <ul>
-                    <li><h3><a href="cob_game_page.html">게임명 : 리그오브레전드</a></h3></li>
+                    <li><h3><a href="cob_game_page2.html">게임명 : 리그오브레전드</a></h3></li>
                     <li><h3>장르 : AOS</h3></li>
                     <li><h3>게임인원 : 10명</h3></li>
                     <li><h3>플레이타임 : 30분</h3></li>
@@ -334,85 +339,108 @@ a{
             
 
                 <div>
-                    <h1>9.0</h1>
+                    <h1>4.5</h1>
+                </div>
+
+          
+        </div> 
+
+        <div class="game_item">
+            
+            
+            <a href="cob_game_page2.html"><img class="game_img" src="lol.JPG"></a>
+            
+            
+                <ul>
+                    <li><h3><a href="cob_game_page2.html">게임명 : 리그오브레전드</a></h3></li>
+                    <li><h3>장르 : AOS</h3></li>
+                    <li><h3>게임인원 : 10명</h3></li>
+                    <li><h3>플레이타임 : 30분</h3></li>
+                    <li><h3>사용연령 : 12세</h3></li>
+                </ul>
+            
+
+                <div>
+                    <h1>4.5</h1>
+                </div>
+
+          
+        </div> 
+
+       <div class="game_item">
+            
+            
+            <a href="cob_game_page2.html"><img class="game_img" src="lol.JPG"></a>
+            
+            
+                <ul>
+                    <li><h3><a href="cob_game_page2.html">게임명 : 리그오브레전드</a></h3></li>
+                    <li><h3>장르 : AOS</h3></li>
+                    <li><h3>게임인원 : 10명</h3></li>
+                    <li><h3>플레이타임 : 30분</h3></li>
+                    <li><h3>사용연령 : 12세</h3></li>
+                </ul>
+            
+
+                <div>
+                    <h1>4.5</h1>
                 </div>
 
           
         </div>
-
-        <div class="block1">
+        <div class="game_item">
             
-                <img class="gameimg" src="lol.JPG">
             
-        
-            <ul>
-                <li><h3>게임명 : 리그오브레전드</h3></li>
-                <li><h3>장르 : AOS</h3></li>
-                <li><h3>게임인원 : 10명</h3></li>
-                <li><h3>플레이타임 : 30분</h3></li>
-                <li><h3>사용연령 : 12세</h3></li>
-            </ul>
-        
-
-            <div>
-                <h1>9.0</h1>
-            </div>
-
-
-        </div>
-
-        <div class="block1">
-                
-            <img class="gameimg" src="lol.JPG">
+            <a href="cob_game_page2.html"><img class="game_img" src="lol.JPG"></a>
             
-        
-            <ul>
-                <li><h3>게임명 : 리그오브레전드</h3></li>
-                <li><h3>장르 : AOS</h3></li>
-                <li><h3>게임인원 : 10명</h3></li>
-                <li><h3>플레이타임 : 30분</h3></li>
-                <li><h3>사용연령 : 12세</h3></li>
-            </ul>
-        
-
-            <div>
-                <h1>9.0</h1>
-            </div>
-
-
-        </div>        
-        
-        <div class="block1">
-                
-            <img class="gameimg" src="lol.JPG">
             
-        
-            <ul>
-                <li><h3>게임명 : 리그오브레전드</h3></li>
-                <li><h3>장르 : AOS</h3></li>
-                <li><h3>게임인원 : 10명</h3></li>
-                <li><h3>플레이타임 : 30분</h3></li>
-                <li><h3>사용연령 : 12세</h3></li>
-            </ul>
-        
+                <ul>
+                    <li><h3><a href="cob_game_page2.html">게임명 : 리그오브레전드</a></h3></li>
+                    <li><h3>장르 : AOS</h3></li>
+                    <li><h3>게임인원 : 10명</h3></li>
+                    <li><h3>플레이타임 : 30분</h3></li>
+                    <li><h3>사용연령 : 12세</h3></li>
+                </ul>
+            
 
-            <div>
-                <h1>9.0</h1>
-            </div>
+                <div>
+                    <h1>4.5</h1>
+                </div>
 
+          
+        </div>     
+        <div class="game_item">
+            
+            
+            <a href="cob_game_page2.html"><img class="game_img" src="lol.JPG"></a>
+            
+            
+                <ul>
+                    <li><h3><a href="cob_game_page2.html">게임명 : 리그오브레전드</a></h3></li>
+                    <li><h3>장르 : AOS</h3></li>
+                    <li><h3>게임인원 : 10명</h3></li>
+                    <li><h3>플레이타임 : 30분</h3></li>
+                    <li><h3>사용연령 : 12세</h3></li>
+                </ul>
+            
 
-        </div>       
+                <div>
+                    <h1>4.5</h1>
+                </div>
+
+          
+        </div>   
     </div> 
    
  
     
-    <div class="pagebar">
+    <div class="paging">
 
-        <div class="regbtn">
-            <input type="button" value="등록" class="btn2" 
-            onclick="document.location.href='/C:/Users/kohwo/Documents/GitHub/java-study/java_project/web/cob/cob_game_page.html'" >
+        <div class="game_reg">
+            <input type="button" value="등록" class="reg_btn" 
+            onclick="document.location.href='cob_game_reg.html'" >
 
-        <div class="paging">
+        <div class="paging_number">
             <h4> << <a href="#">1 | </a><a href="#">2 | </a><a href="#">3 </a> >> </h4>
         </div>
         

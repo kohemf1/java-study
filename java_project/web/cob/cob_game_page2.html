@@ -129,7 +129,7 @@
     .ex_wrap{
         width: 100%;
         background-color: #f7f7f7; 
-        border-bottom: 2px solid #000; 
+        border-bottom: 2px solid rgb(251, 188, 006); 
         width: 980px;
         margin: 0px auto;
         min-height: 240px;
@@ -158,6 +158,7 @@
         margin-top: 15px;
         margin-left: 25px;
         float: left;
+        box-shadow: 1px 1px 3px 1px #dadce0;
     }
 
     .ex_score>h1{
@@ -174,6 +175,7 @@
     } 
     .ex_left>li{
         margin-top: 20px;
+        
     }   
     .ex_center{
         margin-left:80px;
@@ -198,6 +200,9 @@
         float: right;
         margin-right: 20px;
         display: inline-block;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border-radius: 15px 15px;
+        
     }
     
     .ex_img>img{
@@ -223,7 +228,7 @@
     .rule_text{
         width: 880px;
         min-height: 240px;
-        border: 1px solid #000;
+        box-shadow: 1px 1px 3px 1px #dadce0;
     }
 
     .review_item{
@@ -245,59 +250,66 @@
     }
 
     .review_area{
-        width: 520px;
-        height: 150px;
-        border-top: 2px solid #000;
-        border-bottom: 2px solid #000;
-        float: left;
-       
+        width: 630px;
+        height: 50px;
+        margin: 20px auto;
+        
+        /* border-top: 2px solid #000;
+        border-bottom: 2px solid #000;    */ 
     }
     .review_text{
-        width: 478;
-        height: 148px;
-        font-size: 20px;
-    }
-    .review_reg{
-        border-top: 2px solid #000;
-        border-right: 2px solid #000;
-        border-bottom: 2px solid #000;
-        width: 120px;
-        height: 5px;
-        float: left;
-    }
-    .review_reg>ul>li>input{
-       margin-left: auto;
-       margin-right: auto;
-    }
-
-    .review_btn{
-        background-color: rgb(66, 133, 244);
-        width:50px;
-        height:50px;
-        
-        margin-top: 15px;
-        margin-left: 25px;
-        float: right;
+        width: 578px;
+        height: 40px;
         font-size: 18px;
+        float: left;
+        resize: none;
+        background-color: #f7f7f7;
+        border-radius: 15px 0px 0px 15px;
+        outline: none;
+        text-indent: 10px;
+        padding-top: 10px;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #dadce0;
+        
+    }
+    .review_btn{
+        background-color: rgb(251, 188, 006);
+        width:50px;
+        height:52px;
+        border-radius: 0px 10px 10px 0px;
+       /*  margin-top: 15px;
+        margin-left: 25px; */
+        float: left;
+        font-size: 18px;
+        /* background-color: #f7f7f7; */
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #dadce0;
+    }
+    .review_btn:hover{ 
+        background-color: rgb(66, 133, 244); 
+        cursor: pointer;
     }
     .review_list{
         clear: left;
-        margin-top: 200px;
+        margin-top: 20px;
     }
     .list_item{
         clear: left;
         width: 872px;
         /* border: 1px solid #000; */
         height: 30px;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #dadce0;
+        margin-top: 5px;
     }
     .list_id{
         float: left;
-        border-right: 2px solid rgb(66, 133, 244);
+        border-right: 2px solid rgb(251, 188, 006);
         padding: 2px 10px;
     }
     .list_text{
         float: left;
-        border-right: 2px solid rgb(66, 133, 244);
+        border-right: 2px solid rgb(251, 188, 006);
         width: 600px;
         padding: 2px 10px;
     }
@@ -306,23 +318,26 @@
         padding: 2px 10px;
     }
     .paging{
-        margin-top: 150px;
+        margin-top: 25px;
         margin-left: auto;
         margin-right: auto;
         width: 300px;
     }
     .paging>ul>li{
         float: left;
-        width: 38px;
+        width: 36px;
         height: 20px;
-        border-right: 2px solid rgb(66, 133, 244);
-        border-left: 2px solid rgb(66, 133, 244);
+        border-right: 2px solid rgb(251, 188, 006);
+        border-left: 2px solid rgb(251, 188, 006);
         text-align: center;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        padding: 0px 1px;
+        padding-bottom: 3px;
     }
 
     .moving{
         clear: left;
-        margin: 0px auto;
+        margin: 100px auto;
         padding-top: 20px;
         width: 189px;
     }
@@ -333,8 +348,14 @@
         width: 60px;
         border-radius: 5px;
         margin-right: 3px;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #dadce0;
     }
 
+    .moving>ul>li>input:hover{
+        background-color: rgb(66, 133, 244); 
+        cursor: pointer;
+    }
 
     a{
         text-decoration: none;
@@ -348,36 +369,40 @@
             height: 2px;
         }
 
-        .star-rating {
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  justify-content: space-around;
-  padding: 0 0.2em;
-  text-align: center;
-  width: 5em;
-}
+
+
+    .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        justify-content: space-around;
+        padding: 0 0.2em;
+        text-align: center;
+        width: 5em;
+        margin: 0px auto;
+    }
  
-.star-rating input {
-  display: none;
-}
+
+    .star-rating input {
+     display: none;
+    }
  
-.star-rating label {
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2.3px;
-  -webkit-text-stroke-color: #2b2a29;
-  cursor: pointer;
-}
- 
-.star-rating :checked ~ label {
-  -webkit-text-fill-color: gold;
-}
- 
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  -webkit-text-fill-color: #fff58c;
-}
+    .star-rating label {
+        -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 2.3px;
+        -webkit-text-stroke-color: #2b2a29;
+        cursor: pointer;
+    }
+    
+    .star-rating :checked ~ label {
+        -webkit-text-fill-color: rgb(251, 188, 006);
+    }
+    
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+     -webkit-text-fill-color: rgb(251, 188, 006);
+    }
 
 
 </style>
@@ -386,7 +411,6 @@
     function btnclick(){
         alert('등록되었습니다');
     }
-
     ratingToPercent();{
       const score = +this.restaurant.averageScore * 20;
       return score + 1.5;
@@ -431,7 +455,7 @@
 
     <div class="searchbar">
         <h1>
-            <a href="/Users/kohwo/Documents/GitHub/java-study/java_project/web/cob/cob_game_main.html">
+            <a href="cob_game_main.html">
             게임 DB
             </a>
         </h1>
@@ -450,7 +474,7 @@
         <hr>
 
         <div class="ex_score">
-            <h1>8.5</h1>
+            <h1>4.5</h1>
         </div>
 
         <div class="ex_list">
@@ -505,12 +529,9 @@
 
 
                 <div class="review_area">
-                    <textarea class="review_text" cols="50" rows="4"></textarea>
-                </div>
-                <div class="review_reg">
-                    <ul>
-                        <li><input type="button" value="등록" class="review_btn" onclick="btnclick()"></li>
-                    </ul>
+                    
+                    <textarea class="review_text" cols="50" rows="1"></textarea>
+                    <input type="button" value="등록" class="review_btn" onclick="btnclick()">
                 </div>
             
             </div>
@@ -520,19 +541,29 @@
 
             <div class="review_list">
                 <ul class="list_item">
-                    <li class="list_id"> 어드민(admin)</li>
-                    <li class="list_text">어드민(admin)</li>
-                    <li class="list_date">어드민(admin)</li>
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
                 </ul>
                 <ul class="list_item">
-                    <li class="list_id"> 어드민(admin)</li>
-                    <li class="list_text">어드민(admin)</li>
-                    <li class="list_date">어드민(admin)</li>
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
                 </ul>
                 <ul class="list_item">
-                    <li class="list_id"> 어드민(admin)</li>
-                    <li class="list_text">어드민(admin)</li>
-                    <li class="list_date">어드민(admin)</li>
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
+                </ul>
+                <ul class="list_item">
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
+                </ul>
+                <ul class="list_item">
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
                 </ul>
             </div>
 
@@ -551,9 +582,9 @@
         </div>
         <div class="moving">
             <ul>
-                <li><input type="submit" value="이전"></li>
-                <li><input type="submit" value="목록"></li>
-                <li><input type="submit" value="다음"></li>
+                <li><input type="button" value="이전"></li>
+                <li><input type="button" value="목록"></li>
+                <li><input type="button" value="다음"></li>
             </ul>
         </div>
     </div>
