@@ -145,9 +145,10 @@
         display: inline-block;
     }
 
-    .ex_wrap>div>h5{
+    .ex_wrap>div>input{
         display: inline-block;
-        margin : 10px 0px;
+        margin : 10px 10px;
+        width: 50px;
     }
 
     .ex_score{
@@ -253,9 +254,6 @@
         width: 630px;
         height: 50px;
         margin: 20px auto;
-        
-        /* border-top: 2px solid #000;
-        border-bottom: 2px solid #000;    */ 
     }
     .review_text{
         width: 578px;
@@ -277,18 +275,12 @@
         width:50px;
         height:52px;
         border-radius: 0px 10px 10px 0px;
-       /*  margin-top: 15px;
-        margin-left: 25px; */
         float: left;
         font-size: 18px;
-        /* background-color: #f7f7f7; */
         box-shadow: 1px 1px 3px 1px #dadce0;
         border: 1px solid #dadce0;
     }
-    .review_btn:hover{ 
-        background-color: rgb(66, 133, 244); 
-        cursor: pointer;
-    }
+
     .review_list{
         clear: left;
         margin-top: 20px;
@@ -296,7 +288,6 @@
     .list_item{
         clear: left;
         width: 872px;
-        /* border: 1px solid #000; */
         height: 30px;
         box-shadow: 1px 1px 3px 1px #dadce0;
         border: 1px solid #dadce0;
@@ -352,10 +343,6 @@
         border: 1px solid #dadce0;
     }
 
-    .moving>ul>li>input:hover{
-        background-color: rgb(66, 133, 244); 
-        cursor: pointer;
-    }
 
     a{
         text-decoration: none;
@@ -369,7 +356,10 @@
             height: 2px;
         }
 
-
+    input[type=button]:hover{
+        background-color: rgb(66, 133, 244); 
+        cursor: pointer;
+    }
 
     .star-rating {
         display: flex;
@@ -476,6 +466,7 @@ function btnclick(){
         
         <div class="ex_title">
             <h2>리그오브레전드 </h2> 
+            <input type="button" class="btn_edit" value="edit" onclick="location.href='cob_game_reg2.html'">
         </div>
         <hr>
 

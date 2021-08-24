@@ -189,12 +189,24 @@
         width: 200px;
         float: right;
         box-shadow: 1px 1px 3px 1px #dadce0;
+        visibility: hidden;
     }
     .reg_img>input:hover{
         cursor: pointer;
     }
 
+    .img_btn{
+        text-align: center;
+        width: 200px;
+        float: right;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #000;
+    }
  
+    .img_btn:hover{
+        cursor: pointer;
+        background-color: rgb(251, 188, 006);
+    }
 
     .reglist{
         text-align: center;
@@ -246,9 +258,11 @@
         height: 50px;
         border: 3px solid white;
         box-shadow: 1px 1px 3px 1px #dadce0;
-       background-color: #f7f7f7;
+        background-color: #f7f7f7;
     }   
-   
+
+
+
     .reg_intro{
         text-align: center;
         height: 200px;
@@ -324,7 +338,6 @@
             
             var newImg = document.createElement("img");
             newImg.setAttribute("src", event.target.result); 
-            
             document.querySelector("#image_container").appendChild(newImg);
         }; 
         
@@ -392,8 +405,9 @@
                 <h3>게임 이미지</h3>
                 <div class="reg_default" alt="사진" id="image_container" ></div>
                 
+               
                 <input type="file" id="image" accept="image/*" onchange="setImg(event);"/> 
-                
+                <label class="img_btn" for="image"> 이미지 등록 </label>
 
             </span>
 
