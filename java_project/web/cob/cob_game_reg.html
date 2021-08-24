@@ -126,50 +126,75 @@
         width: 50px;
         float: right;
     }
+
+    .search>input[type=submit]:hover{
+        cursor: pointer;
+    }
    
     .background{
         margin: 20px auto;
-        background-color: rgb(251, 188, 006);
+        background-color: #f7f7f7;
         width: 950px;
-        height: 980px;
+        height: 1050px;
     }
 
     .title{
         margin-left: 30px;
         padding-top: 30px;
+        
     }
 
     .background>hr{
         margin-top: 5px;
         width: 150px;
         margin-left: 20px;
-        border: 1px solid white;
-        background-color: white;
+        border: 1px solid rgb(251, 188, 006);
+       
     }
 
-    .background>.regbar{
+    .background>.reg_wrap{
         margin: 20px auto;
         width: 880px;
         padding-top: 30px;
     }
     
-    .background>div>ul{
-        clear: both;
-        width: 500px;
+    .reg_img{
+        width: 230px;
         float: right;
     }
-    .regimg{
+    .reg_img>h3{
+        width: 150px;
+        float: right;
+        margin-bottom: 10px;
+       
+    }
+
+    .reg_default{
         float: right;
         background-color: white;
         width: 200px;
         height: 200px;
+        box-shadow: 1px 1px 3px 1px #dadce0;
     }
+
+    .reg_img>input{
+        margin-top: 10px;
+        width: 200px;
+        float: right;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+    }
+    .reg_img>input:hover{
+        cursor: pointer;
+    }
+
+ 
+
     .reglist{
         text-align: center;
         height: 330px;
         width: 500px;
     }
-    .nameint{
+    .reg_item{
         float: left;
         width: 190px;
         height: 60px;
@@ -179,20 +204,21 @@
         font-size: 20px;
         font-weight: bold;
     }
-    .nametext{
+    .reg_text{
         float: left;
         width: 300px;
         height: 80px;
-
+        
     }
-    .nametext>input{
+    .reg_text>input{
         font-size: 20px;
         width: 280px;
         height: 50px;
         border: 3px solid white;
-        background-color: rgb(251, 188, 006);
+        box-shadow: 1px 1px 3px 1px #dadce0;
+       background-color: #f7f7f7; 
     }
-    .nameint2{
+    .reg_item2{
         float: left;
         width: 190px;
         height: 60px;
@@ -202,51 +228,27 @@
         font-size: 20px;
         font-weight: bold;
     }
-    .nametext2{
+    .reg_text2{
         float: left;
         width: 300px;
         height: 80px;
     } 
-    .nametext2>input{
+    .reg_text2>input{
         font-size: 20px;
         width: 280px;
         height: 50px;
         border: 3px solid white;
-        background-color: rgb(251, 188, 006);
+        box-shadow: 1px 1px 3px 1px #dadce0;
+       background-color: #f7f7f7;
     }   
-    .defaultimg{
-        width: 230px;
-        float: right;
-    }
-    .defaultimg>h3{
-        width: 200px;
-        float: right;
-        margin-bottom: 10px;
-    }
-    .defaultimg>input{
-        margin-top: 10px;
-        width: 200px;
-        float: right;
-    }
-    .circle{
-        background-color: rgb(66, 133, 244) ;
-        width:150px !important ; 
-        height:150px !important ;
-        border-radius: 75px;
-        margin-top: 150px !important ;
-        margin-right: 30px !important ;
-        float: right;
-        font-size: 36px;
-        color: white;
-        border: 1px solid #000;
-    }
-    .intro{
+   
+    .reg_intro{
         text-align: center;
-        height: 330px;
-        width: 500px; 
+        height: 200px;
+        width: 800px; 
     }
    
-    .intro>ul>li{
+    .reg_intro>ul>li{
         float: left;
         width: 190px !important ;
         height: 62px;
@@ -256,16 +258,45 @@
         font-size: 20px;
         font-weight: bold;
     } 
-    .intro>ul>li>textarea{
+    .reg_intro>ul>li>textarea{
+        display: block;
         border: 3px solid white;
-        background-color: rgb(251, 188, 006);
-    }     
+        background-color: #f7f7f7; 
+        box-shadow: 1px 1px 3px 1px #dadce0;
+    }   
     
+    .reg_btn{
+        width: 105px;
+        height: 55px;
+        margin: 0px auto;
+    }
+    .reg_btn>input{
+        
+        background-color: #f7f7f7 ;
+        width:100px !important ; 
+        height:40px !important ;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 24px;
+        color: #000;   
+        box-shadow: 1px 1px 3px 1px #dadce0;
+    }
+
+    .reg_btn>input:hover{ 
+        background-color: rgb(66, 133, 244); 
+        cursor: pointer;
+    }
+   a:hover{
+    cursor: pointer;
+   }
+
 </style>
 <script>
     function btnclick(){
         alert('등록되었습니다');
     }
+
+   
 </script>
 <body>
     <header>
@@ -319,61 +350,62 @@
         </div>
         <hr>
 
-        <div class="regbar">
+        <div class="reg_wrap">
 
-            <span class="defaultimg">
+            <span class="reg_img">
                 <h3>게임 이미지</h3>
-                <img class="regimg" src="cob_color.png">
-                <input type="file">
-                <input type="button" value="등록" class="circle" onclick=" btnclick()">
-               
+                <img class="reg_default" src="cob_color.png">
+                <input type="file">    
             </span>
 
             <div class="reglist">
                 <ul>
-                    <li class="nameint">게임명 </li>
-                    <li class="nametext"><input type="text"></li>
+                    <li class="reg_item">게임명 </li>
+                    <li class="reg_text"><input type="text"></li>
                 </ul>
                 <ul>
-                    <li class="nameint">장르 </li>
-                    <li class="nametext"><input type="text"></li>
+                    <li class="reg_item">장르 </li>
+                    <li class="reg_text"><input type="text"></li>
                 </ul>
                 <ul>
-                    <li class="nameint">게임인원 </li>
-                    <li class="nametext"><input type="text"></li>
+                    <li class="reg_item">게임인원 </li>
+                    <li class="reg_text"><input type="text"></li>
                 </ul>
                 <ul>
-                    <li class="nameint">플레이타임 </li>
-                    <li class="nametext"><input type="text"></li>
+                    <li class="reg_item">플레이타임 </li>
+                    <li class="reg_text"><input type="text"></li>
                 </ul>
             </div>
             <div class="reglist">
                 <ul>
-                    <li class="nameint2">사용연령 </li>
-                    <li class="nametext2"><input type="text"></li>
+                    <li class="reg_item2">사용연령 </li>
+                    <li class="reg_text2"><input type="text"></li>
                 </ul>
                 <ul>
-                    <li class="nameint2">게임난이도 </li>
-                    <li class="nametext2"><input type="text"></li>
+                    <li class="reg_item2">게임난이도 </li>
+                    <li class="reg_text2"><input type="text"></li>
                 </ul>
                 <ul>
-                    <li class="nameint2">출판사 </li>
-                    <li class="nametext2"><input type="text"></li>
+                    <li class="reg_item2">출판사 </li>
+                    <li class="reg_text2"><input type="text"></li>
                 </ul>
                 <ul>
-                    <li class="nameint2">출시일 </li>
-                    <li class="nametext2"><input type="text"></li>
+                    <li class="reg_item2">출시일 </li>
+                    <li class="reg_text2"><input type="text"></li>
                 </ul>
             </div>
 
-           <div class="intro">
+           <div class="reg_intro">
                <ul>
-                   <li class="introli">Intro&rule</li>
-                   <li class="textareal"><textarea cols="70" rows="10"></textarea></li>
+                   <li class="intro_li">Intro&rule</li>
+                   <li class="intro_text"><textarea cols="60" rows="10"></textarea></li>
+                   
                </ul>
+               
            </div>
-
-
+            <div class="reg_btn">
+                <input type="button" value="등록" onclick=" btnclick()">
+            </div>
         </div>
     </div>
    
