@@ -178,17 +178,35 @@
         box-shadow: 1px 1px 3px 1px #dadce0;
     }
 
+    .reg_default>img{
+        width: 100%;
+        height: 100%;
+    }
+
+
     .reg_img>input{
         margin-top: 10px;
         width: 200px;
         float: right;
         box-shadow: 1px 1px 3px 1px #dadce0;
+        visibility: hidden;
     }
     .reg_img>input:hover{
         cursor: pointer;
     }
 
+    .img_btn{
+        text-align: center;
+        width: 200px;
+        float: right;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #000;
+    }
  
+    .img_btn:hover{
+        cursor: pointer;
+        background-color: rgb(251, 188, 006);
+    }
 
     .reglist{
         text-align: center;
@@ -240,9 +258,11 @@
         height: 50px;
         border: 3px solid white;
         box-shadow: 1px 1px 3px 1px #dadce0;
-       background-color: #f7f7f7;
+        background-color: #f7f7f7;
     }   
-   
+
+
+
     .reg_intro{
         text-align: center;
         height: 200px;
@@ -303,6 +323,28 @@
     function btnclick(){
         alert('등록되었습니다');
     }
+
+
+    function setImg(event) { 
+        
+        var reader = new FileReader(); 
+        
+        reader.onload = function(event) { 
+            /* document.querySelector("div#image_container").removeChild(); */
+           var oldImg = document.querySelector("#image_container img");
+            if(oldImg != null) {
+                document.querySelector("#image_container").removeChild(oldImg);
+            }
+            
+            var newImg = document.createElement("img");
+            newImg.setAttribute("src", event.target.result); 
+            document.querySelector("#image_container").appendChild(newImg);
+        }; 
+        
+       reader.readAsDataURL(event.target.files[0]); 
+    }
+
+
  
 </script>
 <body>
@@ -343,7 +385,7 @@
 
     <div class="searchbar">
         <h1><a href="cob_game_main.html">게임 DB</a></h1>
-
+        <div class="search">
         <div class="search">
             <input type="text" id="search_text">
             <input type="submit" value="검색" id="btn1">
@@ -361,8 +403,12 @@
 
             <span class="reg_img">
                 <h3>게임 이미지</h3>
-                <img class="reg_default" src="cob_color.png" alt="사진영역">
-                <input type="file">    
+                <div class="reg_default" alt="사진" id="image_container" ></div>
+                
+               
+                <input type="file" id="image" accept="image/*" onchange="setImg(event);"/> 
+                <label class="img_btn" for="image"> 이미지 등록 </label>
+
             </span>
 
             <div class="reglist">
@@ -411,7 +457,7 @@
                
            </div>
             <div class="reg_btn">
-                <input type="button" value="등록" onclick=" btnclick()">
+                <input type="button" value="등록" onclick="btnclick()">
             </div>
         </div>
     </div>

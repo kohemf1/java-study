@@ -88,6 +88,11 @@
         float: left;
     }
 
+    .main_body{
+        background-color: #f7f7f7;
+    }
+
+
     .searchbar{
         
         height: 50px;
@@ -128,7 +133,7 @@
    
     .ex_wrap{
         width: 100%;
-        background-color: #f7f7f7; 
+        background-color: white;
         border-bottom: 2px solid rgb(251, 188, 006); 
         width: 980px;
         margin: 0px auto;
@@ -212,7 +217,7 @@
 
     .rule_wrap{
         width: 100%;
-       background-color: #f7f7f7;
+        background-color: white;
         width: 980px;
         margin: 0px auto;
         min-height: 960px;
@@ -221,15 +226,82 @@
         border-bottom: 2px solid #000;
     }
 
-    .rule_list{
-        padding-top: 20px;
-        padding-left: 40px;
+
+  
+    .rule_list input[type=radio]{
+        display: none;
     }
 
-    .rule_text{
-        width: 880px;
-        min-height: 240px;
-        box-shadow: 1px 1px 3px 1px #dadce0;
+    #tab-1:checked ~ .rule_list_tab label:nth-child(1), /* id:tab-1 과 rule_list_tab 자손을 연결 */
+    #tab-2:checked ~ .rule_list_tab label:nth-child(2),
+    #tab-3:checked ~ .rule_list_tab label:nth-child(3),
+    #tab-4:checked ~ .rule_list_tab label:nth-child(4){
+        background-color: #f7f7f7; 
+        box-shadow: none;   
+    }
+
+    .rule_content > div{
+        display: none;
+    }
+
+    #tab-1:checked ~ .rule_content div:nth-child(1),
+    #tab-2:checked ~ .rule_content div:nth-child(2),
+    #tab-3:checked ~ .rule_content div:nth-child(3),
+    #tab-4:checked ~ .rule_content div:nth-child(4){
+        display: block;
+    }
+
+    .rule_list{
+        margin: 0 auto;
+        width: 900px;
+        max-width: 100%;
+        padding-top: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .rule_list_tab{
+        overflow: hidden;
+    }
+
+    
+    .rule_list_tab label{
+        
+        font-size: 18px;
+        width: 25%;
+        float: left;
+        text-align: center;
+        padding: 15px 0px;
+        text-transform: uppercase; /* 글자를 대문자로 바꿔준다 */
+        font-weight: bold;
+        letter-spacing: 2px; /* 글자사이 간격 */
+        user-select: none; /* 드래그를 막아주는 속성 */
+        background-color: white;
+        /* box-shadow: 1px 1px 3px 1px #dadce0; */
+        /* border-right: 1 px solid rgb(251, 188, 006); */
+        -webkit-user-select: none;
+    }
+ 
+    .rule_list_tab>label:hover{
+        background-color: rgb(251, 188, 006);
+        cursor: pointer;
+    }
+
+    .rule_content {
+        background-color: #f7f7f7;
+        min-height: 250px;
+    }
+
+
+    .rule_content > div{
+        padding: 30px;
+        line-height: 1.5;
+        font-size: 17px;
+    }
+ 
+    .rule_content_name3 > iframe{
+        width: 400px;
+        height: 300px;
     }
 
     .review_item{
@@ -412,8 +484,38 @@ function btnclick(){
     }  
 
 </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
 
-<body>
+    $(function(){
+
+        var embed = $('#content_iframe'); // 영상코드
+
+        $('#tab-3').on('click',function(){
+            $('.rule_content_name3 ').empty();
+            var path = $(this).attr('href');
+            $('.rule_content_name3').append(embed);
+            $(path).show();
+            
+        })
+
+
+        $('#tab-1').on('click',function(){
+            $('.rule_content_name3 ').empty();
+        })
+
+        $('#tab-2').on('click',function(){
+            $('.rule_content_name3 ').empty();
+        })
+
+        $('#tab-4').on('click',function(){
+            $('.rule_content_name3 ').empty();
+        })
+    });
+   
+
+</script>
+<body class="main_body">
     <header>
         <div class="MultiBar">
             <ul class="area_gnb">
@@ -497,10 +599,46 @@ function btnclick(){
    </div>
 
     <div class="rule_wrap">
+
+
+
         <div class="rule_list">
-            <h1>intro&rule </h1>
-            <hr>
-            <p class="rule_text"></p>
+
+            <input type="radio" id="tab-1" name="show" checked>
+            <input type="radio" id="tab-2" name="show">
+            <input type="radio" id="tab-3" name="show">
+            <input type="radio" id="tab-4" name="show">
+            
+            <div class="rule_list_tab">
+                <label for="tab-1">Intro</label>
+                <label for="tab-2">Rule</label>
+                <label for="tab-3">play</label>
+                <label for="tab-4">etc</label>
+            </div>
+
+            <div class="rule_content">
+                <div class="rule_content_name1">
+                    Intro입니다
+                </div>
+                <div class="rule_content_name2">
+                    Rule입니다
+                </div>
+                <div class="rule_content_name3">
+                    
+                    <iframe id="content_iframe" width="956" height="538"
+                    src="https://www.youtube.com/embed/-GSSZjA1lMQ" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                   </iframe> 
+
+
+                </div>
+                <div class="rule_content_name4">
+                    etc입니다
+                </div>
+            </div>
         </div>
 
         <div class="review_item">

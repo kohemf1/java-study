@@ -20,4 +20,8 @@ public class IndexController {
 		return "redirect:/index";
 	}
 	
+	@RequestMapping("/index3")
+	public void index3() {
+		
+	}
 }
