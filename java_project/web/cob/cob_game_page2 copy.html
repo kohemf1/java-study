@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Come on, Board</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+    header {
+        position: relative;
+        z-index: 20;
+        min-width: 980px;
+        width: 100%;
+        height: 140px;
+        background-color: rgb(66, 133, 244);
+        text-align: center;
+    }
+    .MultiBar {
+        display: inline-block;
+        height: 30px;
+        width: 100%;
+        max-width: 1280px;
+        padding: 12px 0px 5px;
+    } 
+
+    .area_gnb {
+        font-size: 12px;
+        width: 500px;
+        height: 30px;
+        float: right;
+        color: white;
+    }
+
+    .area_gnb>li {
+        float: right;
+        width: 75px;
+    }
+
+    .container {
+        display: inline-block;
+        height: 93px;
+        width: 100%;
+        max-width: 1280px;
+        position: relative;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        width: 180px;
+        margin-left: -90px;
+    }
+
+
+    .main_naviwrap {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1280px;
+        height: 80px;
+        margin-top: -98px;
+        padding-bottom: 10px;
+    }
+    .main_nav {
+        padding-top: 45px;
+    }
+    .main_nav>.left_ul {
+        float: left;
+        overflow: hidden;
+    }
+    .main_nav>.right_ul {
+        float: right;
+        overflow: hidden;
+    }
+
+    .main_nav>ul>li {
+        color: white;
+        width: 85px;
+        float: left;
+    }
+
+    .main_body{
+        background-color: #f7f7f7;
+    }
+
+
+    .searchbar{
+        
+        height: 50px;
+        width: 100%;
+        max-width: 980px;
+        padding: 12px  5px;
+        color: white;
+        background-color: rgb(251, 188, 006);
+        margin: 30px auto;
+        border: 2px solid #000;
+ 
+    }
+    .searchbar>h1 {
+        float:left;
+        padding: auto 20px;
+        margin: 0px 10px;
+    }
+    .search{
+
+        float : right;
+        margin-top: 8px;
+        margin-right: 20px;
+        padding: auto 0px;
+    }
+
+    .search>input[type=text]{
+
+        height: 30px;
+        width: 250px;
+    }
+
+    .search>input[type=submit]{
+
+        height: 34px;
+        width: 50px;
+        float: right;
+    }
+   
+    .ex_wrap{
+        width: 100%;
+        background-color: white;
+        border-bottom: 2px solid rgb(251, 188, 006); 
+        width: 980px;
+        margin: 0px auto;
+        min-height: 240px;
+        padding: 0px 5px;
+    }
+
+    .ex_title{
+        margin: 10px 30px 0px 30px;
+    }
+
+    .ex_wrap>div>h2{
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .ex_wrap>div>input{
+        display: inline-block;
+        margin : 10px 10px;
+        width: 50px;
+    }
+
+    .ex_score{
+        background-color: rgb(052,168,083);
+        width:150px;
+        height:150px;
+        border-radius: 75px;
+        margin-top: 15px;
+        margin-left: 25px;
+        float: left;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+    }
+
+    .ex_score>h1{
+        text-align: center;
+        padding-top: 30px;
+        font-size: 64px;
+      
+    }
+    .ex_left{
+        margin-left: 50px;
+        margin-top: 20px;
+        float: left;
+        font-size: 18px;
+    } 
+    .ex_left>li{
+        margin-top: 20px;
+        
+    }   
+    .ex_center{
+        margin-left:80px;
+        margin-top: 20px;
+        float: left;
+        font-size: 18px;
+    }
+    .ex_center>li{
+        margin-top: 20px;
+    }    
+    .ex_right{
+        margin-left:80px;
+        margin-top: 20px;
+        float: left;
+        font-size: 18px;
+    }
+    .ex_right>li{
+        margin-top: 20px;
+    }    
+    
+    .ex_img{
+        float: right;
+        margin-right: 20px;
+        display: inline-block;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border-radius: 15px 15px;
+        
+    }
+    
+    .ex_img>img{
+        border-radius: 20px;
+    }
+
+    .rule_wrap{
+        width: 100%;
+        background-color: white;
+        width: 980px;
+        margin: 0px auto;
+        min-height: 960px;
+        height: auto;
+        padding: 0px 5px;
+        border-bottom: 2px solid #000;
+    }
+
+
+  
+    .rule_list input[type=radio]{
+        display: none;
+    }
+
+    #tab-1:checked ~ .rule_list_tab label:nth-child(1), /* id:tab-1 과 rule_list_tab 자손을 연결 */
+    #tab-2:checked ~ .rule_list_tab label:nth-child(2),
+    #tab-3:checked ~ .rule_list_tab label:nth-child(3),
+    #tab-4:checked ~ .rule_list_tab label:nth-child(4){
+        background-color: #f7f7f7; 
+        box-shadow: none;   
+    }
+
+    .rule_content > div{
+        display: none;
+    }
+
+    #tab-1:checked ~ .rule_content div:nth-child(1),
+    #tab-2:checked ~ .rule_content div:nth-child(2),
+    #tab-3:checked ~ .rule_content div:nth-child(3),
+    #tab-4:checked ~ .rule_content div:nth-child(4){
+        display: block;
+    }
+
+    .rule_list{
+        margin: 0 auto;
+        width: 900px;
+        max-width: 100%;
+        padding-top: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .rule_list_tab{
+        overflow: hidden;
+    }
+
+    
+    .rule_list_tab label{
+        
+        font-size: 18px;
+        width: 25%;
+        float: left;
+        text-align: center;
+        padding: 15px 0px;
+        text-transform: uppercase; /* 글자를 대문자로 바꿔준다 */
+        font-weight: bold;
+        letter-spacing: 2px; /* 글자사이 간격 */
+        user-select: none; /* 드래그를 막아주는 속성 */
+        background-color: white;
+        /* box-shadow: 1px 1px 3px 1px #dadce0; */
+        /* border-right: 1px solid rgb(251, 188, 006); */
+
+    }
+ 
+    .rule_list_tab>label:hover{
+        background-color: rgb(251, 188, 006);
+        cursor: pointer;
+    }
+
+    .rule_content {
+        background-color: #f7f7f7;
+        min-height: 250px;
+    }
+
+
+    .rule_content > div{
+        padding: 30px;
+        line-height: 1.5;
+        font-size: 17px;
+    }
+ 
+    .rule_content_name3 > iframe{
+        width: 400px;
+        height: 300px;
+    }
+
+    .review_item{
+        padding-top: 20px;
+        padding-left: 40px;
+        width: 921px;
+       
+    }
+    
+    .review_text{
+        font-size: 16px;
+    }
+   
+    .review_wrap{
+        margin: 0px auto;
+        width: 670px;
+        height: 160px;
+        display: inline;
+    }
+
+    .review_area{
+        width: 630px;
+        height: 50px;
+        margin: 20px auto;
+    }
+    .review_text{
+        width: 578px;
+        height: 40px;
+        font-size: 18px;
+        float: left;
+        resize: none;
+        background-color: #f7f7f7;
+        border-radius: 15px 0px 0px 15px;
+        outline: none;
+        text-indent: 10px;
+        padding-top: 10px;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #dadce0;
+        
+    }
+    .review_btn{
+        background-color: rgb(251, 188, 006);
+        width:50px;
+        height:52px;
+        border-radius: 0px 10px 10px 0px;
+        float: left;
+        font-size: 18px;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #dadce0;
+    }
+
+    .review_list{
+        clear: left;
+        margin-top: 20px;
+    }
+    .list_item{
+        clear: left;
+        width: 872px;
+        height: 30px;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #dadce0;
+        margin-top: 5px;
+    }
+    .list_id{
+        float: left;
+        border-right: 2px solid rgb(251, 188, 006);
+        padding: 2px 10px;
+    }
+    .list_text{
+        float: left;
+        border-right: 2px solid rgb(251, 188, 006);
+        width: 600px;
+        padding: 2px 10px;
+    }
+    .list_date{
+        float: left;
+        padding: 2px 10px;
+    }
+    .paging{
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    }
+    .paging>ul>li{
+        float: left;
+        width: 36px;
+        height: 20px;
+        border-right: 2px solid rgb(251, 188, 006);
+        border-left: 2px solid rgb(251, 188, 006);
+        text-align: center;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        padding: 0px 1px;
+        padding-bottom: 3px;
+    }
+
+    .moving{
+        clear: left;
+        margin: 100px auto;
+        padding-top: 20px;
+        width: 189px;
+    }
+    .moving>ul>li{
+        float: left;
+    }
+    .moving>ul>li>input{
+        width: 60px;
+        border-radius: 5px;
+        margin-right: 3px;
+        box-shadow: 1px 1px 3px 1px #dadce0;
+        border: 1px solid #dadce0;
+    }
+
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    hr{
+            margin-bottom: 10px;
+            width: 250px;
+            background-color: rgb(251, 188, 006);
+            height: 2px;
+        }
+
+    input[type=button]:hover{
+        background-color: rgb(66, 133, 244); 
+        cursor: pointer;
+    }
+
+    .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        justify-content: space-around;
+        padding: 0 0.2em;
+        text-align: center;
+        width: 5em;
+        margin: 0px auto;
+    }
+ 
+
+    .star-rating input {
+     display: none;
+    }
+ 
+    .star-rating label {
+        -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 2.3px;
+        -webkit-text-stroke-color: #2b2a29;
+        cursor: pointer;
+    }
+    
+    .star-rating :checked ~ label {
+        -webkit-text-fill-color: rgb(251, 188, 006);
+    }
+    
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+     -webkit-text-fill-color: rgb(251, 188, 006);
+    }
+
+
+</style>
+
+<script>
+
+function btnclick(){
+        alert('등록되었습니다');
+    }
+
+  
+</script>
+<script>
+  function ratingToPercent(){
+      const score = +this.restaurant.averageScore * 20;
+      return score + 1.5;
+    }  
+
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+    $(function(){
+
+        var embed = $('#content_iframe'); // 영상코드
+
+        $('#tab-3').on('click',function(){
+            $('.rule_content_name3 ').empty();
+            var path = $(this).attr('href');
+            $('.rule_content_name3').append(embed);
+            $(path).show();
+            
+        })
+
+
+        $('#tab-1').on('click',function(){
+            $('.rule_content_name3 ').empty();
+        })
+
+        $('#tab-2').on('click',function(){
+            $('.rule_content_name3 ').empty();
+        })
+
+        $('#tab-4').on('click',function(){
+            $('.rule_content_name3 ').empty();
+        })
+    });
+   
+
+</script>
+<body class="main_body">
+    <header>
+        <div class="MultiBar">
+            <ul class="area_gnb">
+                <li>시작페이지로</li>
+                <li>다크모드</li>
+                <li>마이페이지</li>
+                <li>로그인</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <img src="cob_white.png" class="logo">
+        </div>
+        <div class="main_naviwrap">
+            <div class="main_nav">
+                <ul class="left_ul">
+                    <li>회사소개</li>
+                    <li>회사소개</li>
+                    <li>회사소개</li>    
+                </ul>
+            </div>
+        </div>
+
+        <div class="main_naviwrap">
+            <div class="main_nav">
+                <ul class="right_ul">
+                    <li>모임</li>
+                    <li>게시판</li>
+                    <li>카페</li>
+                    <li>게임</li>    
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="searchbar">
+        <h1>
+            <a href="cob_game_main.html">
+            게임 DB
+            </a>
+        </h1>
+
+        <div class="search">
+            <input type="text" id="search_text">
+            <input type="submit" value="검색" id="btn1">
+        </div>
+    </div>
+
+   <div class="ex_wrap">
+        
+        <div class="ex_title">
+            <h2>리그오브레전드 </h2> 
+            <input type="button" class="btn_edit" value="edit" onclick="location.href='cob_game_reg2.html'">
+        </div>
+        <hr>
+
+        <div class="ex_score">
+            <h1>4.5</h1>
+        </div>
+
+        <div class="ex_list">
+            <ul class="ex_left">
+                <li>장르 : </li>
+                <li>플레이타임 : 30분 </li>
+                <li>게임난이도 : </li>
+            </ul>
+            <ul class="ex_center">
+                <li>게임인원 : </li>
+                <li>사용연령 : </li>
+            </ul>
+            <ul class="ex_right">
+                <li>출시일 : </li>
+                <li>출판사 : </li>
+            </ul>
+        </div>
+
+        <div class="ex_img">
+            <img src="lol.JPG" alt="lol" height="160px">
+        </div>
+
+   </div>
+
+    <div class="rule_wrap">
+
+
+
+        <div class="rule_list">
+
+            <input type="radio" id="tab-1" name="show" checked>
+            <input type="radio" id="tab-2" name="show">
+            <input type="radio" id="tab-3" name="show">
+            <input type="radio" id="tab-4" name="show">
+            
+            <div class="rule_list_tab">
+                <label for="tab-1">Intro</label>
+                <label for="tab-2">Rule</label>
+                <label for="tab-3">play</label>
+                <label for="tab-4">etc</label>
+            </div>
+
+            <div class="rule_content">
+                <div class="rule_content_name1">
+                    Intro입니다
+                </div>
+                <div class="rule_content_name2">
+                    Rule입니다
+                </div>
+                <div class="rule_content_name3">
+                    
+                    <iframe id="content_iframe" width="956" height="538"
+                    src="https://www.youtube.com/embed/-GSSZjA1lMQ" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                   </iframe> 
+
+
+                </div>
+                <div class="rule_content_name4">
+                    etc입니다
+                </div>
+            </div>
+        </div>
+
+        <div class="review_item">
+            <h1>review</h1>
+            <hr>
+
+            
+
+            <div class="review_wrap">
+
+                <div class="star-rating space-x-4 mx-auto">
+                    <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+                    <label for="5-stars" class="star pr-4">★</label>
+                    <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+                    <label for="4-stars" class="star">★</label>
+                    <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+                    <label for="3-stars" class="star">★</label>
+                    <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+                    <label for="2-stars" class="star">★</label>
+                    <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+                    <label for="1-star" class="star">★</label>
+                </div>
+
+
+                <div class="review_area">
+                    
+                    <textarea class="review_text" cols="50" rows="1"></textarea>
+                    <input type="button" value="등록" class="review_btn" onclick="btnclick()">
+                </div>
+            
+            </div>
+
+
+
+
+            <div class="review_list">
+                <ul class="list_item">
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
+                </ul>
+                <ul class="list_item">
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
+                </ul>
+                <ul class="list_item">
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
+                </ul>
+                <ul class="list_item">
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
+                </ul>
+                <ul class="list_item">
+                    <li class="list_id"><a href="#"> 어드민(admin)</a></li>
+                    <li class="list_text"><a href="#">리뷰 페이지 입니다</a></li>
+                    <li class="list_date">2021.08.20</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="paging">
+            <ul>
+                <li><a href="#">이전</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">다음</a></li>
+            </ul>
+        </div>
+        <div class="moving">
+            <ul>
+                <li><input type="button" value="이전"></li>
+                <li><input type="button" value="목록" onclick="location.href='cob_game_main.html'"></li>
+                <li><input type="button" value="다음"></li>
+            </ul>
+        </div>
+    </div>
+
+   
+       
+   
+</body>
+</html>
