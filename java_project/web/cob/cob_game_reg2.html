@@ -133,10 +133,12 @@
    
     .background{
         margin: 20px auto;
-        background-color: #f7f7f7;
+        background-color:#f7f7f7;
         width: 950px;
-        height: 1050px;
+        min-height: 1500px;
         max-width: 980px;
+        overflow: hidden;
+        height: auto;
     }
 
     .title{
@@ -157,6 +159,8 @@
         margin: 20px auto;
         width: 880px;
         padding-top: 30px;
+        height: 1370px;
+        
     }
     
     .reg_img{
@@ -261,36 +265,47 @@
         background-color: #f7f7f7;
     }   
 
-
-
     .reg_intro{
         text-align: center;
-        height: 200px;
+        height: 600px;
         width: 800px; 
     }
+
+    .reg_intro>ul{
+        clear: both;
+        margin-bottom: 20px;
+    }
    
-    .reg_intro>ul>li{
+    .reg_intro>ul>.intro_li{
         float: left;
         width: 190px !important ;
         height: 62px;
         text-align: right;
         padding-right: 10px;
-        padding-top: 18px;
         font-size: 20px;
         font-weight: bold;
-    } 
+        margin-right: 10px;
+    }
+    
+    .intro_text{
+        height: 130px;
+        margin: 20px auto;
+    }
+
     .reg_intro>ul>li>textarea{
         display: block;
         border: 3px solid white;
         background-color: #f7f7f7; 
         box-shadow: 1px 1px 3px 1px #dadce0;
         resize: none;
+       
     }   
     
     .reg_btn{
         width: 105px;
         height: 55px;
-        margin: 0px auto;
+        margin: 10px auto;
+
     }
     .reg_btn>input{
         
@@ -308,12 +323,13 @@
         background-color: rgb(251, 188, 006); 
         cursor: pointer;
     }
-   a:hover{
-    cursor: pointer;
-   }
+
+    a:hover{
+        cursor: pointer;
+    }
 
    
-   a{
+    a{
         text-decoration: none;
         color: black;
     }
@@ -451,10 +467,29 @@
 
            <div class="reg_intro">
                <ul>
-                   <li class="intro_li">Intro&rule</li>
-                   <li class="intro_text"><textarea cols="60" rows="10"></textarea></li>
+                    <li class="intro_li">INTRO</li>
+                    <li class="intro_text"><textarea cols="60" rows="8"></textarea></li>
                    
                </ul>
+
+               <ul>
+                    <li class="intro_li">RULE</li>
+                    <li class="intro_text"><textarea cols="60" rows="8"></textarea></li>
+               
+                </ul>
+
+                <ul>
+                    <li class="intro_li">PlAY</li>
+                    <li class="intro_text"><textarea cols="60" rows="8"></textarea></li>
+           
+                </ul>
+
+                <ul>
+                    <li class="intro_li">ETC</li>
+                    <li class="intro_text"><textarea cols="60" rows="8"></textarea></li>
+            
+                </ul>
+            
                
            </div>
             <div class="reg_btn">

@@ -244,7 +244,7 @@
         display: none;
     }
 
-    #tab-1:checked ~ .rule_content div:nth-child(1),
+    #tab-1:checked ~ .rule_content div:nth-child(1), 
     #tab-2:checked ~ .rule_content div:nth-child(2),
     #tab-3:checked ~ .rule_content div:nth-child(3),
     #tab-4:checked ~ .rule_content div:nth-child(4){
@@ -289,7 +289,7 @@
 
     .rule_content {
         background-color: #f7f7f7;
-        min-height: 250px;
+        min-height: 370px;
     }
 
 
@@ -492,7 +492,7 @@ function btnclick(){
         var embed = $('#content_iframe'); // 영상코드
 
         $('#tab-3').on('click',function(){
-            $('.rule_content_name3 ').empty();
+           /*  $('.rule_content_name3 ').empty(); */
             var path = $(this).attr('href');
             $('.rule_content_name3').append(embed);
             $(path).show();
