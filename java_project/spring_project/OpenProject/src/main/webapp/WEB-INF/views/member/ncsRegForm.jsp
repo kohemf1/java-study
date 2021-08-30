@@ -25,7 +25,7 @@ document.writeln(location.href);
 
 		<table>
 				<tr>
-					<td>아이디</td>
+					<td>아이디3</td>
 					<td>
 						<input type="text" name="memberid" id="memberid">
 					</td>

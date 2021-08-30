@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Come on, Board</title>
+	<title>Home</title>
 </head>
 <style>
     * {
@@ -369,8 +368,8 @@
 
  
 </script>
-<body class="main_body">
-    <header>
+<body>
+<header>
         <div class="MultiBar">
             <ul class="area_gnb">
                 <li>시작페이지로</li>
@@ -381,7 +380,8 @@
         </div>
 
         <div class="container">
-            <img src="cob_white.png" class="logo">
+            <img  class="logo" src="<c:url value="/image/cob_white.png"/>">
+            
         </div>
         <div class="main_naviwrap">
             <div class="main_nav">
@@ -503,9 +503,6 @@
             </div>
         </div>
     </div>
-   
-   
-       
-   
+
 </body>
 </html>
