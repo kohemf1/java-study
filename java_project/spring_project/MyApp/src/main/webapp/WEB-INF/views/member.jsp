@@ -153,7 +153,7 @@
 	
 	function memberList(){
 		$.ajax({
-			url : 'http://54.180.160.179:8080/op/members',
+			url : 'http://localhost:8081/members',
 			type : 'GET',
 			success : function(data){
 				console.log(data);
