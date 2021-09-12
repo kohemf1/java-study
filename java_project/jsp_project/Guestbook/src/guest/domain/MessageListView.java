@@ -23,7 +23,7 @@ public class MessageListView {
 		calpageTotalCount();
 		
 	}
-
+ 
 	private void calpageTotalCount() {
 		
 		if(this.messageTotalCount == 0) {
