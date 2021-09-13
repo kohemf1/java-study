@@ -41,10 +41,12 @@
 			<table>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="memberid" id="memberid" class="form-control m-2">
-						<span id="msg" class="display_none"></span> <img id="loadingimg"
-						class="display_none" alt="loading"
-						src="<c:url value="/images/loading.gif"/>"></td>
+					<td>
+					<input type="text" name="memberid" id="memberid" class="form-control m-2">
+						<span id="msg" class="display_none"></span> 
+						<img id="loadingimg" class="display_none" alt="loading"
+						src="<c:url value="/images/loading.gif"/>">
+					</td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
