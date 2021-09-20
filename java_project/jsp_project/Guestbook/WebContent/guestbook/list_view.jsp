@@ -35,6 +35,7 @@
 				<td>비밀번호</td>
 				<td> <input type="password" name="password" required> </td>
 			</tr>
+		
 			
 			<tr>
 				<td>메세지</td>
