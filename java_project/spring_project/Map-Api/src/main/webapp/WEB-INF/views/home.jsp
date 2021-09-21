@@ -34,7 +34,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 var geocoder = new kakao.maps.services.Geocoder();
 
 // 주소로 좌표를 검색합니다
-geocoder.addressSearch('서울 마포구 백범로 23', function(result, status) {
+geocoder.addressSearch('서울특별시 서대문구 연세로 50', function(result, status) {
 
     // 정상적으로 검색이 완료됐으면 
      if (status === kakao.maps.services.Status.OK) {
@@ -49,7 +49,7 @@ geocoder.addressSearch('서울 마포구 백범로 23', function(result, status)
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">비트캠프</div>'
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">연세대</div>'
         });
         infowindow.open(map, marker);
 
