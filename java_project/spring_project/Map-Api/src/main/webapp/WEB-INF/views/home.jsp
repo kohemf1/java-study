@@ -58,5 +58,69 @@ geocoder.addressSearch('서울특별시 서대문구 연세로 50', function(res
     } 
 });    
 </script>
+
+				<div class="btn_order_pay">
+					<button type="button" id="btn_pay" onclick="requestPay()">결제</button>
+				</div>
 </body>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+</head>
+<script>
+	var IMP = window.IMP; 
+	IMP.init("imp57300102"); 
+	function requestPay() {			
+			
+		// IMP.request_pay(param, callback) 결제창 호출
+		IMP.request_pay({ // param
+			pg : 'html5_inicis', //ActiveX 결제창은 inicis를 사용
+			pay_method : 'card', //card(신용카드), trans(실시간계좌이체), vbank(가상계좌), phone(휴대폰소액결제)
+			merchant_uid : 123123,
+			name : "asdasd",
+			amount : 100,
+			buyer_email : "",
+			buyer_name :1,
+			buyer_tel : 2,
+			buyer_addr : 3,
+			buyer_postcode : 4
+		}, function(rsp) { // callback
+			if (rsp.success) {
+				// 결제 성공 시 로직
+        		$.ajax({
+				type : 'POST',
+				url : "<c:url value='/game/order/${gamepage.gameIdx}'/>",
+				data :$("#order_form").serialize(),
+				
+				success: function(returnData){   
+						alert("성공")
+						
+					},
+					error:function(request,status,error){   //데이터 주고받기가 실패했을 경우 실행할 결과
+						//alert('실패');
+						alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+						
+					},
+			   		 complete : function(){	
+			   		 }
+				
+				
+				});	
+				alert("결제가 완료되었습니다.")
+				location.href="<c:url value='/game/gamepage/${gamepage.gameIdx}'/>"
+  			} else {
+				alert("결제에 실패하였습니다. \n에러 내용: " + rsp.error_msg);
+			}	
+		});
+		
+	}  	
+  	
+	
+	
+	
+  </script>
+
+
 </html>
