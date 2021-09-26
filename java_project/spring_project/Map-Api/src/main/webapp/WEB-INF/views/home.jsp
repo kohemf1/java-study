@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page session="false" %>
 <html>
 <head>
@@ -66,9 +66,13 @@ geocoder.addressSearch('서울특별시 서대문구 연세로 50', function(res
 
 </script>
 
-				<div class="btn_order_pay">
-					<button type="button" id="btn_pay" onclick="requestPay()">결제</button>
-				</div>
+	<div class="btn_order_pay">
+		<button type="button" id="btn_pay" onclick="requestPay()">결제</button>
+	</div>
+	
+	
+	
+	
 </body>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
